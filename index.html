@@ -5,34 +5,34 @@
   
 	<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<script type='text/javascript' src='blur.js'></script>
   
 	<style type='text/css'>
+		html{
+			height: 100%;
+			width: 100%;
+		}
 		body{
+			height: auto;
+			width: 100%;
 			margin:0;padding:0;
 			color:#fff;
 			font-family:arial;
-			text-shadow:0 2px 2px #000;
-			
-			background:top left no-repeat;
 			background-image:url('pencils.jpeg');
-			
+			background-size: 1500px 825px;
 		}
 		.circle{
-			margin:0 auto;
-			
-			-webkit-box-shadow:0 2px 2px #000, 0 1px 0 #fff inset;
-			-moz-box-shadow:0 2px 2px #000, 0 1px 0 #fff inset;
-			box-shadow:0 2px 2px #000, 0 1px 0 #fff inset;
-			
-			width:255px;
-			height:255px;
-			
-			-webkit-border-radius:127px;
-			-moz-border-radius:127px;
-			border-radius:127px;
+			width:300px;
+			height:100%;
 			
 			cursor:move;
+		}
+
+		@media screen and (max-width: 627px) {
+			.circle{
+				margin: 0px auto;
+			}
 		}
 	</style>
 </head>
@@ -41,9 +41,8 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.circle').blurjs({
-				draggable: true,
 				overlay: 'rgba(0,0,0,0.4)',
-				radius:10
+				radius:50
 			});
 		});
 	</script>
