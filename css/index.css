@@ -178,11 +178,70 @@ td,
 th {
   padding: 0;
 }
+@font-face {
+  font-family: "openSansLight";
+  src: url("fonts/opensans/opensans-light.eot");
+  src: url("fonts/opensans/opensans-light.eot#iefix") format("embedded-opentype"), url("fonts/opensans/opensans-light.woff") format("woff"), url("fonts/opensans/opensans-light.ttf") format("truetype"), url("fonts/opensans/opensans-light.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "openSansBold";
+  src: url("fonts/opensans/opensans-bold.eot");
+  src: url("fonts/opensans/opensans-bold.eot#iefix") format("embedded-opentype"), url("fonts/opensans/opensans-bold.woff") format("woff"), url("fonts/opensans/opensans-bold.ttf") format("truetype"), url("fonts/opensans/opensans-bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "openSansRegular";
+  src: url("fonts/opensans/opensans-regular.eot");
+  src: url("fonts/opensans/opensans-regular.eot#iefix") format("embedded-opentype"), url("fonts/opensans/opensans-regular.woff") format("woff"), url("fonts/opensans/opensans-regular.ttf") format("truetype"), url("fonts/opensans/opensans-regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bellota";
+  src: url("fonts/bellota/bellota-regular.eot");
+  src: url("fonts/bellota/bellota-regular.eot#iefix") format("embedded-opentype"), url("fonts/bellota/bellota-regular.woff") format("woff"), url("fonts/bellota/bellota-regular.ttf") format("truetype"), url("fonts/bellota/bellota-regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Flaticon";
+  src: url("fonts/flaticon/flaticon.eot");
+  src: url("fonts/flaticon/flaticon.eot#iefix") format("embedded-opentype"), url("fonts/flaticon/flaticon.woff") format("woff"), url("fonts/flaticon/flaticon.ttf") format("truetype"), url("fonts/flaticon/flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+}
+.flaticon-behance:before {
+  content: "\e000";
+}
+.flaticon-github:before {
+  content: "\e001";
+}
+.flaticon-linkedin:before {
+  content: "\e002";
+}
+.flaticon-menu:before {
+  content: "\e003";
+}
+.flaticon-twitter:before {
+  content: "\e004";
+}
 html {
   height: 100%;
   width: 100%;
 }
 body {
+  font-size: 14px;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -192,26 +251,47 @@ body {
   background-image: url("../img/bg.jpeg");
   background-size: 1500px 825px;
 }
+a {
+  text-decoration: none;
+  color: #00baff;
+}
 .btn {
   background: transparent;
+  display: block;
 }
-.wrapper {
+.btn:focus {
+  outline: none;
+}
+.contentWrapper {
   width: 371px;
   height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+.wrapper {
+  width: 391px;
+  height: 100%;
+  max-height: 100%;
+  overflow: scroll;
   background: rgba(0,0,0,0.4);
 }
 .wrapper .menuBtn {
+  -webkit-transition: background 0.6s;
+  transition: background 0.6s;
+  overflow: hidden;
   width: 100%;
   position: relative;
-  background: rgba(0,0,0,0.4);
-  height: 80px;
+  height: auto;
+  padding: 40px 0px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 .wrapper .menuBtn button {
   width: 39px;
   height: 33px;
+  display: none;
   position: absolute;
+  border: 0px;
   top: 22px;
   right: 22px;
 }
@@ -226,9 +306,85 @@ body {
   -o-border-radius: 50% 50% 50% 50%;
   border-radius: 50% 50% 50% 50%;
 }
+.wrapper .content {
+  text-align: center;
+}
+.wrapper .content .name {
+  font-family: bellota;
+  font-size: 2.2em;
+}
+.wrapper .content .separatorName {
+  width: 200px;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.wrapper .content .ocuppation {
+  font-family: openSansRegular;
+  font-size: 1em;
+}
+.wrapper .content .btn-social {
+  position: relative;
+  background: rgba(0,0,0,0.6);
+  width: 220px;
+  margin: 0.6em auto;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -ms-border-radius: 4px 4px 4px 4px;
+  -o-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  font-size: 1.4em;
+  font-family: openSansRegular;
+  padding: 0.6em;
+  color: #fff;
+}
+.wrapper .content .btn-social:before {
+  font-size: 1.7em;
+  position: absolute;
+  top: 7px;
+  left: 14px;
+}
+.menu {
+  display: none;
+  list-style: none;
+  padding: 7px 20px;
+}
+.menu .itemMenu {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font-size: 1.4em;
+  padding: 9px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.menu .itemMenu:nth-last-child(1) {
+  border-bottom: 0px;
+}
+/*Mobile Design*/
 @media screen and (max-width: 627px) {
-  .wrapper {
+  .contentWrapper {
     margin: 0px auto;
     width: 95%;
+  }
+  .wrapper {
+    margin: 0px auto;
+    width: 100%;
+  }
+  .wrapper .menuBtn {
+    height: 72px;
+    padding: 40px 0px 0px 0px;
+  }
+  .wrapper .menuBtn button {
+    display: block;
+  }
+  .wrapper .fotoPerfil {
+    margin: -26px auto 38px auto;
+    -webkit-transition: margin 0.6s;
+    transition: margin 0.6s;
+  }
+  .menu {
+    display: block;
+  }
+  body {
+    background-position: -10 0px 0px;
   }
 }

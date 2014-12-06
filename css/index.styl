@@ -1,5 +1,6 @@
 @import 'normalize'
 @import 'mixins'
+@import 'fonts'
 
 
 
@@ -7,6 +8,7 @@ html
   height: 100%
   width: 100%
 body
+  font-size 14px
   height: 100%
   width: 100%
   margin: 0
@@ -16,24 +18,42 @@ body
   background-image: url('../img/bg.jpeg')
   background-size: 1500px 825px
 
+a 
+  text-decoration none
+  color #00baff
+
 .btn
   background transparent
+  display block
   
+.btn:focus
+  outline none
 
-.wrapper
+.contentWrapper
   width: 371px
   height: 100%
+  max-height: 100%
+  overflow hidden
+.wrapper
+  width: 391px
+  height: 100%
+  max-height: 100%
+  overflow scroll
   background rgba(0, 0, 0, .4)
   & .menuBtn
+    transition(background,.6s)
+    overflow hidden
     width 100%
     position relative
-    background rgba(0, 0, 0, .4)
-    height 80px
+    height auto
+    padding 40px 0px
     box-sizing(border-box)
     & button
       width 39px 
       height 33px
+      display none
       position absolute
+      border 0px 
       top 22px
       right 22px
       
@@ -44,9 +64,68 @@ body
     height 221px
     radius(50%,50%,50%,50%)
     
+  & .content
+    text-align center
+    & .name  
+      font-family bellota
+      font-size 2.2em
+    & .separatorName
+      width 200px
+      border:1px solid rgba(255, 255, 255, .5)
+    & .ocuppation
+      font-family openSansRegular
+      font-size 1em
+    & .btn-social
+      position relative
+      background rgba(0, 0, 0, .6)
+      width 220px
+      margin .6em auto
+      radius(4px,4px,4px,4px)
+      font-size 1.4em
+      font-family openSansRegular
+      padding .6em
+      color white
+      &:before 
+        font-size 1.7em
+        position absolute
+        top 7px
+        left 14px
+.menu
+  display none
+  list-style none
+  padding 7px 20px
+  
+  & .itemMenu
+    box-sizing(border-box)
+    width 100%
+    text-align center
+    font-size 1.4em
+    padding 9px
+    border-bottom 1px solid rgba(255, 255, 255, .1)
+  & .itemMenu:nth-last-child(1)
+    border-bottom 0px
 
+
+/*Mobile Design*/
 @media screen and (max-width: 627px)
+  .contentWrapper
+    margin 0px auto
+    width 95%   
   .wrapper
     margin 0px auto
-    width 95%
+    width 100%
+    & .menuBtn
+      height 72px
+      padding 40px 0px 0px 0px
+      & button
+        display block
+    & .fotoPerfil
+      margin -26px auto 38px auto 
+      transition(margin,.6s)     
+
+  .menu
+    display block
+  
+  body
+    background-position -10 00px 0px
 

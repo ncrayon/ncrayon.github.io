@@ -8,22 +8,34 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body>
-	<div class="wrapper">
-		<div class="menuBtn">
-			<button class="btn">X</button>
+	<div class="contentWrapper">
+		<div class="wrapper">
+			<div class="menuBtn">
+				<button id="menu" data-state="plegado" class="btn"><i class="flaticon-menu"></i></button>
+				<ul class="menu">
+					<li class="itemMenu">Acerca de Mi</li>
+					<li class="itemMenu">Habilidades</li>
+					<li class="itemMenu">Portafolio</li>
+					<li class="itemMenu">Blog</li>
+					<li class="itemMenu">Contacto</li>
+				</ul>
+			</div>
+			<img class="fotoPerfil" src="img/perfil.jpg" width="221" height="221" alt="">
+			<div class="content">
+				<hr class="separatorName">
+				<h1 class="name">Nelkit Isael Chavez</h1>
+				<hr class="separatorName">
+				<h3 class="ocuppation">FrontEnd Web Developer </h3>
+				<a class="flaticon-twitter btn btn-social" target="_black" href="http://twitter.com/cnelkit">@Cnelkit </a>
+				<a class="flaticon-github btn btn-social" target="_black" href="http://github.com/nelkit"> Nelkit</a>
+				<a class="flaticon-behance btn btn-social" target="_black" href="https://www.behance.net/nelkitisaef6da"> Nelkit Chavez</a>
+				<a class="flaticon-linkedin btn btn-social" target="_black" href="https://www.linkedin.com/pub/nelkit-chavez-calona/94/53a/b05"> Nelkit Chavez</a>
+			</div>
 		</div>
-		<img class="fotoPerfil" src="img/perfil.jpg" width="221" height="221" alt="">	
 	</div>
 
 	<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
 	<script type='text/javascript' src='js/blur.js'></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('.wrapper').blurjs({
-				overlay: 'rgba(0,0,0,0.4)',
-				radius:50
-			});
-		});
-	</script>
+	<script type='text/javascript' src='js/main.js'></script>
 </body>
 </html>
