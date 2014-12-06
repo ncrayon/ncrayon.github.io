@@ -15,8 +15,12 @@ body
   padding: 0
   color: #fff
   font-family: arial
-  background-image: url('../img/bg.jpeg')
-  background-size: 1500px 825px
+  background-image: url('../img/bg.jpg')
+  background-size: 1920px 1080px
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+  letter-spacing -.3em
 
 a 
   text-decoration none
@@ -29,13 +33,36 @@ a
 .btn:focus
   outline none
 
+.menuDesktop
+  background rgba(0, 0, 0, .4)
+  display inline-block
+  vertical-align top
+  width 40%
+  height 90%
+  overflow hidden
+  margin 3em 14% 0px 13%
+  radius(40px,40px,40px,40px)
+  letter-spacing normal
+  & .menu
+    display block
+    & .itemMenu
+      & .icon:before
+        font-size 3em !important
+        display block
+      & .descrip
+        color white
+        display block
+
 .contentWrapper
-  width: 371px
+  letter-spacing normal
+  width: 33%
   height: 100%
   max-height: 100%
   overflow hidden
+  display inline-block
+  vertical-align top
 .wrapper
-  width: 391px
+  width: 104%
   height: 100%
   max-height: 100%
   overflow-y scroll
@@ -63,6 +90,7 @@ a
     width 221px
     height 221px
     radius(50%,50%,50%,50%)
+    shadow(0px,2px,4px,rgba(0, 0, 0, .5))
     
   & .content
     text-align center
@@ -104,10 +132,28 @@ a
     border-bottom 1px solid rgba(255, 255, 255, .1)
   & .itemMenu:nth-last-child(1)
     border-bottom 0px
+    
 
-
+@media screen and (max-width: 1000px)
+  .menuDesktop
+    display none
+  .contentWrapper
+    display block
+    margin 0px auto
+    width 70%  
+  .wrapper
+    margin 0px auto
+    width 100%
+    & .menuBtn
+      height 72px
+      padding 40px 0px 0px 0px
+      & button
+        display block
+  .menu
+    display block
+    
 /*Mobile Design*/
-@media screen and (max-width: 627px)
+@media screen and (max-width: 667px)
   .contentWrapper
     margin 0px auto
     width 95%   
@@ -128,6 +174,12 @@ a
         
 
   .menu
+    display block
+    
+  .menuDesktop
+    display none
+    
+  .contentWrapper
     display block
   
   body

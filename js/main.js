@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.wrapper').blurjs({
+	$('.blur').blurjs({
 		overlay: 'rgba(0,0,0,0.4)',
 		radius:50
 	});
