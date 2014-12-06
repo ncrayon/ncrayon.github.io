@@ -38,7 +38,7 @@ a
   width: 391px
   height: 100%
   max-height: 100%
-  overflow scroll
+  overflow-y scroll
   background rgba(0, 0, 0, .4)
   & .menuBtn
     transition(background,.6s)
@@ -121,7 +121,11 @@ a
         display block
     & .fotoPerfil
       margin -26px auto 38px auto 
-      transition(margin,.6s)     
+      transition(margin,.6s) 
+    & .content  
+      & .btn-social:before
+        top 3px
+        
 
   .menu
     display block
