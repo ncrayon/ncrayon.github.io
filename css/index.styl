@@ -1,0 +1,52 @@
+@import 'normalize'
+@import 'mixins'
+
+
+
+html
+  height: 100%
+  width: 100%
+body
+  height: 100%
+  width: 100%
+  margin: 0
+  padding: 0
+  color: #fff
+  font-family: arial
+  background-image: url('../img/bg.jpeg')
+  background-size: 1500px 825px
+
+.btn
+  background transparent
+  
+
+.wrapper
+  width: 371px
+  height: 100%
+  background rgba(0, 0, 0, .4)
+  & .menuBtn
+    width 100%
+    position relative
+    background rgba(0, 0, 0, .4)
+    height 80px
+    box-sizing(border-box)
+    & button
+      width 39px 
+      height 33px
+      position absolute
+      top 22px
+      right 22px
+      
+  & .fotoPerfil
+    display block
+    margin -26px auto 38px auto 
+    width 221px
+    height 221px
+    radius(50%,50%,50%,50%)
+    
+
+@media screen and (max-width: 627px)
+  .wrapper
+    margin 0px auto
+    width 95%
+
