@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="PortafolioApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Nelkit Chávez | UI/UX Designer & Front End Developer</title>
+	<link rel="stylesheet" href="../css/index.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+	<div class="topMenu blur">
+		<a href="/"><img src="../img/perfil.jpg" width="156" height="156" class="avatar" alt=""></a>
+		<ul class="meMenu">
+			<li class="itemMenu active"><a href="#about">Acerca de Mi</a></li>
+			<li class="itemMenu"><a href="#skills">Habilidades</a></li>
+			<li class="itemMenu"><a href="#portfolio">Portafolio</a></li>
+			<li class="itemMenu"><a href="#blog">Blog</a></li>
+			<li class="itemMenu"><a href="#contact">Contacto</a></li>
+		</ul>
+		<button id="menu" data-state="plegado" class="btn"><i class="flaticon-menu"></i></button>
+	</div>
+	<div class="wrapperMe">
+		<div class="view" ng-view></div>	
+	</div>
+
+
+	<!-- Dependencias -->
+	<script type='text/javascript' src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+	<script type='text/javascript' src='../js/vendor/blur.js'></script>
+	<script type='text/javascript' src='../js/vendor/retina.min.js'></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
+	<!-- MiCodigo -->
+	<script type='text/javascript' src='../js/main.js'></script>
+	<!-- ngApp -->
+	<script type='text/javascript' src='scripts/app.js'></script>
+	<!-- ngControllers -->
+	<script type='text/javascript' src='scripts/controllers/about.js'></script>
+</body>
+</html>
