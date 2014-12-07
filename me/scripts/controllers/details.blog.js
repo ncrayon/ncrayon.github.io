@@ -2,23 +2,24 @@
 
 /**
  * @ngdoc function
- * @name frontendMatriculaApp.controller:BlogCtrl
+ * @name frontendMatriculaApp.controller:DetailsBlogCtrl
  * @description
- * # BlogCtrl
+ * # DetailsBlogCtrl
  * Controller of the frontendMatriculaApp
  */
 var angular;
 angular.module('PortafolioApp')
-  .controller('BlogCtrl', function ($scope, $http) {
+  .controller('DetailsBlogCtrl', function ($scope, $routeParams, $http) {
   	var urlBase = "http://nichc-portfolio.herokuapp.com/api/";
   	var urlBlog = "entradas/"
   	var jsonP = '?callback=JSON_CALLBACK';
+	var idEntrada = $scope.id = $routeParams.id;
 
   	//funcion para cargar datos
     $scope.loadData = function() {
-        $http.get(urlBase + urlBlog + jsonP)
+        $http.get(urlBase + urlBlog + idEntrada + jsonP)
         .success(function(data){
-            $scope.listadoEntradas = data;
+            $scope.entrada = data;
         })
         .error(function (data, status) {
           if (status === 401) {

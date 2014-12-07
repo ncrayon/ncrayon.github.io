@@ -1,16 +1,22 @@
 var angular
 
-angular.module('PortafolioApp',[])
+angular.module('PortafolioApp',[
+	'truncate'
+])
 .config(function ($routeProvider) {
     /* rutas */
     $routeProvider
-      .when('/about', {
+      .when('/about/', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
     })
-      .when('/blog', {
+      .when('/blog/', {
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl'
+    })
+      .when('/blog/:id', {
+        templateUrl: 'views/details.blog.html',
+        controller: 'DetailsBlogCtrl'
     })
       .otherwise({
       	redirectTo: '/'
