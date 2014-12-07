@@ -12,8 +12,8 @@ angular.module('PortafolioApp')
   .controller('DetailsBlogCtrl', function ($scope, $routeParams, $http) {
   	var urlBase = "http://nichc-portfolio.herokuapp.com/api/";
   	var urlBlog = "entradas/"
-  	var jsonP = '?callback=JSON_CALLBACK';
-	var idEntrada = $scope.id = $routeParams.id;
+  	var jsonP = '/?callback=JSON_CALLBACK';
+	  var idEntrada = $scope.id = $routeParams.id;
 
   	//funcion para cargar datos
     $scope.loadData = function() {
