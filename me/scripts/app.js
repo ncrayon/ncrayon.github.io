@@ -7,7 +7,12 @@ angular.module('PortafolioApp',[])
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-    }).otherwise({
-      redirectTo: '/'
+    })
+      .when('/blog', {
+        templateUrl: 'views/blog.html',
+        controller: 'BlogCtrl'
+    })
+      .otherwise({
+      	redirectTo: '/'
     });
  });
