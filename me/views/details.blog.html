@@ -1,6 +1,6 @@
 <div class="page">
 		<img class="images" ng-src="{{entrada.featuredImage}}" alt="">
 		<a ng-href="/me/#/blog/{{entrada.id}}"><h1 class="title">{{entrada.title}}</h1></a>
-		<h3 class="subtitle">Escrito por: {{entrada.author}} el dia {{entrada.fecha}}</h3>
+		<h3 class="date">Escrito por: {{entrada.author}} | {{entrada.fecha | date:'fullDate'}}</h3>
 		<p class="paragraph">{{entrada.content}}</p>
 </div>
