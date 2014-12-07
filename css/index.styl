@@ -131,6 +131,8 @@ a
     font-size 1.4em
     padding 9px
     border-bottom 1px solid rgba(255, 255, 255, .1)
+    & a
+      color white
   & .itemMenu:nth-last-child(1)
     border-bottom 0px
 
@@ -240,25 +242,30 @@ a
         display block
   .menu
     display block
-    
-  & .meMenu
-    width 80%
-    box-sizing(border-box)
-    text-align center
-    display block
-    margin 40px 0px !important    
-    & .itemMenu
-      position relative
-      padding 5px 20px !important
-      border-right 0px !important
-      font-size 1.4em
-      border-bottom 1px solid rgba(255, 255, 255, .3)
-      display block !important
-      width 100%
-      & a
-        color white
-    & .active:after
-      display none
+
+  .topMenu
+    & .meMenu
+      width 80%
+      box-sizing(border-box)
+      text-align center
+      display block
+      padding: 0;
+      margin 20px auto !important  
+      & .itemMenu:nth-last-child(1)
+        border-bottom 0px
+      & .itemMenu
+        position relative
+        padding 8px 20px !important
+        border-right 0px !important
+        box-sizing(border-box)
+        font-size 1.4em
+        border-bottom 1px solid rgba(255, 255, 255, .3)
+        display block !important
+        width 100%
+        & a
+          color white
+      & .active:after
+        display none
 
   .topMenu
     & .meMenu
@@ -298,11 +305,14 @@ a
       height 100%
       & .page
         width 100%
-        padding 20px 4em
+        padding 20px 3em
         & .title
           text-align right
     
-
+  .topMenu
+    & .meMenu
+      margin 40px auto !important  
+      
   .menu
     display block
     

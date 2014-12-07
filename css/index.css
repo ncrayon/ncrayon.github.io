@@ -417,6 +417,9 @@ a {
   padding: 9px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
+.menu .itemMenu a {
+  color: #fff;
+}
 .menu .itemMenu:nth-last-child(1) {
   border-bottom: 0px;
 }
@@ -554,27 +557,33 @@ a {
   .menu {
     display: block;
   }
-  .meMenu {
+  .topMenu .meMenu {
     width: 80%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     text-align: center;
     display: block;
-    margin: 40px 0px !important;
+    padding: 0;
+    margin: 20px auto !important;
   }
-  .meMenu .itemMenu {
+  .topMenu .meMenu .itemMenu:nth-last-child(1) {
+    border-bottom: 0px;
+  }
+  .topMenu .meMenu .itemMenu {
     position: relative;
-    padding: 5px 20px !important;
+    padding: 8px 20px !important;
     border-right: 0px !important;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
     font-size: 1.4em;
     border-bottom: 1px solid rgba(255,255,255,0.3);
     display: block !important;
     width: 100%;
   }
-  .meMenu .itemMenu a {
+  .topMenu .meMenu .itemMenu a {
     color: #fff;
   }
-  .meMenu .active:after {
+  .topMenu .meMenu .active:after {
     display: none;
   }
   .topMenu .meMenu {
@@ -624,10 +633,13 @@ a {
   }
   .wrapperMe .view .page {
     width: 100%;
-    padding: 20px 4em;
+    padding: 20px 3em;
   }
   .wrapperMe .view .page .title {
     text-align: right;
+  }
+  .topMenu .meMenu {
+    margin: 40px auto !important;
   }
   .menu {
     display: block;

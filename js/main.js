@@ -25,10 +25,10 @@ $(document).ready(function(){
 				display: 'block',
 			});
 			topBar.animate({
-				height: '230px',
+				height: '250px',
 			}, 600);
 			wrapperMe.animate({
-				top: '230px',
+				top: '250px',
 			}, 600);
 		}else if (estado==="desplegado") {
 			menuPanel.animate({
