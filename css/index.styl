@@ -1,6 +1,8 @@
 @import 'normalize'
 @import 'mixins'
 @import 'fonts'
+@import 'fullpages'
+@import 'grid'
 
 
 
@@ -26,6 +28,23 @@ a
   text-decoration none
   color #00baff
 
+.field
+  background transparent
+  margin-right 10px
+  margin-bottom 10px
+  padding 5px 1em
+  border 0px
+  radius(3px,3px,3px,3px)
+  font-size 1.5em
+  box-sizing(border-box)
+
+.field:focus
+  outline 0px
+  
+.fieldContact
+  background: rgba(0, 0, 0, .3)
+  width 100%
+
 .btn
   background transparent
   display block
@@ -38,25 +57,107 @@ a
   border-bottom 2px solid rgba(0, 0, 0, .1)
   margin 60px 0px 30px 0px
 
+#header
+  display none
+  background rgba(0, 0, 0, .8)
+  vertical-align bottom
+  width 100%
+  overflow hidden
+  position fixed
+  z-index 100
+  letter-spacing normal
+  text-align center
+  & button
+    display none
+  & .menu
+    display block
+    & .itemMenu:nth-last-child(1)
+      border-right 0px
+    & .itemMenu
+      display inline-block !important
+      padding 0px 20px 
+      width auto !important
+      border-bottom 0px
+      border-right 1px solid rgba(255, 255, 255, .2)
+      & .icon:before
+        font-size 1em !important
+        display inline-block
+      & .descrip
+        font-size 1em
+        color white
+        display inline-block
+ 
+.pages
+   letter-spacing normal
+   box-sizing(border-box)
+   
+.skills 
+  background rgba(0,0,0, .4) 
+  color #ddd
+  padding 0px 4.3em
+        
+   
+.portfolio
+   background: #eff0f2
+   color #36383b 
+   padding 0px
+   padding 2em 4em
+   
+.figPortfolio
+  border 2px solid white
+  background: white
+  width 95%
+  margin-right 2px
+  margin-left .3em
+  &:nth-last-child(1)
+    margin-bottom 20px
+  & .captionPortfolio
+    padding 8px
+
+.contact
+  background rgba(65,11,56, .9)
+  color #ddd
+  
+  & .wrapperContact
+    width 60%
+    margin 0px auto
+    
+  & .footContact
+    width 100%
+    position absolute
+    bottom 0px
+    text-align center
+    padding 2em 0px
+    box-sizing(border-box)
+    background: rgba(54,0,50,.6) 
+        
 .menuDesktop
   background rgba(0, 0, 0, .4)
   display inline-block
   vertical-align top
-  width 40%
-  height 90%
+  width 60%
   overflow hidden
-  margin 3em 14% 0px 13%
+  margin 2em 4% 1px 3%
   radius(40px,40px,40px,40px)
   letter-spacing normal
+  text-align center
   & .menu
     display block
+    & .itemMenu:nth-last-child(1)
+      border-right 0px
     & .itemMenu
+      padding 0px 20px 
+      display inline-block !important
+      width auto !important
+      border-bottom 0px
+      border-right 1px solid rgba(255, 255, 255, .2)
       & .icon:before
-        font-size 3em !important
-        display block
+        font-size 1em !important
+        display inline-block
       & .descrip
+        font-size 1em
         color white
-        display block
+        display inline-block
 
 .contentWrapper
   letter-spacing normal
@@ -72,26 +173,10 @@ a
   max-height: 100%
   overflow-y scroll
   background rgba(0, 0, 0, .4)
-  & .menuBtn
-    transition(background,.6s)
-    overflow hidden
-    width 100%
-    position relative
-    height auto
-    padding 40px 0px
-    box-sizing(border-box)
-    & button
-      width 39px 
-      height 33px
-      display none
-      position absolute
-      border 0px 
-      top 22px
-      right 22px
       
   & .fotoPerfil
     display block
-    margin -26px auto 38px auto 
+    margin 30px auto 38px auto 
     width 221px
     height 221px
     radius(50%,50%,50%,50%)
@@ -294,18 +379,11 @@ a
   .images
     width 100%
 
-  body
-    background-image: url('../img/bg-tablet.jpg')
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: top center
-    background-attachment: fixed
-    
 /*Mobile Design*/
 @media screen and (max-width: 667px)
   .contentWrapper
     margin 0px auto
-    width 95%   
+    width 100%   
   .wrapper
     margin 0px auto
     width 100%
@@ -315,7 +393,7 @@ a
       & button
         display block
     & .fotoPerfil
-      margin -26px auto 38px auto 
+      margin 90px auto 38px auto 
       transition(margin,.6s) 
     & .content  
       & .btn-social:before
@@ -343,16 +421,51 @@ a
     
   .contentWrapper
     display block
-  
-  body
-    font-size 12px
-    background-image: url('../img/bg-movil.jpg')
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: top center
-    background-attachment: fixed
 
     
   .images
     width 100%
+  
+  .skills 
+    background rgba(0,0,0, .4) 
+    color #ddd
+    padding 0px .3em
+    
+  .contact
+    & .wrapperContact
+      width 90%
+      margin 0px auto
+      
+  .portfolio
+    padding 2em 2em
+    
+  #header
+    display block
+    height 70px
+    & button
+      display block
+      width 39px 
+      height 33px
+      position absolute
+      border 0px 
+      top 22px
+      right 22px
+    & .menu
+      margin-top 52px
+      display block
+      & .itemMenu:nth-last-child(1)
+        border-bottom 0px
+      & .itemMenu
+        display block !important
+        padding 10px 0px 
+        width 100% !important
+        border-bottom 1px solid rgba(255, 255, 255, .2)
+        border-right 0px
+        & .icon:before
+          font-size 1em !important
+          display inline-block
+        & .descrip
+          font-size 1em
+          color white
+          display inline-block
 

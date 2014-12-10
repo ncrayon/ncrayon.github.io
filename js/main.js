@@ -1,26 +1,39 @@
 $(document).ready(function(){
+
 	$('.blur').blurjs({
 		overlay: 'rgba(0,0,0,0.4)',
 		radius:50
 	});
 
-	$( document ).on( 'click', '#menu', function () {
+	$('#fullpage').fullpage({
+		autoScrolling: false,
+		anchors: ['about', 'skills','portfolio','contact'],
+		slidesNavigation: true,
+		responsive: 1000,
+		afterLoad: function(anchorLink, index){
+			var maxwidth = window.matchMedia('(max-width:768px)').matches
+			if(anchorLink == 'about' && maxwidth==false){
+				$('#header').hide();
+			}else{
+				$('#header').show();
+			}
+		}
+	});
+
+	$( document ).on( 'click', '.menuBtn', function () {
 		var me = $(this);
 		var menuPanelMe = $('.meMenu');
-		var menuPanel = $('.menuBtn');
-		var fotoPerfil = $('.fotoPerfil');
+		var menuPanel = $('#header');
 		var topBar = $('.topMenu');
 		var wrapperMe = $('.wrapperMe');
 		var estado = me.attr('data-state');
 
 		if (estado==="plegado") {
 			menuPanel.animate({
-				height: '300px'
-			}, 600).css({background:'rgba(0,0,0,.4)'});
+				height: '310px'
+			}, 600);
 			me.attr('data-state','desplegado');
-			fotoPerfil.css({
-				margin: '12px auto 38px auto' 
-			});
+
 			menuPanelMe.css({
 				display: 'block',
 			});
@@ -32,12 +45,9 @@ $(document).ready(function(){
 			}, 600);
 		}else if (estado==="desplegado") {
 			menuPanel.animate({
-				height: '72px'
-			}, 600).css({background:'none'});
+				height: '70px'
+			}, 600);
 			me.attr('data-state','plegado');
-			fotoPerfil.css({
-				margin: '-30px auto 38px auto' 
-			});
 			menuPanelMe.css({
 				display: 'none',
 			});
