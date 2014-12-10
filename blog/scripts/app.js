@@ -1,16 +1,12 @@
 var angular
 
-angular.module('PortafolioApp',[
+angular.module('BlogApp',[
 	'truncate'
 ])
 .config(function ($routeProvider) {
     /* rutas */
     $routeProvider
-      .when('/about/', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-    })
-      .when('/blog/', {
+      .when('/', {
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl'
     })

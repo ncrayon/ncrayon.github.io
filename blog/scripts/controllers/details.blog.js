@@ -8,7 +8,7 @@
  * Controller of the frontendMatriculaApp
  */
 var angular;
-angular.module('PortafolioApp')
+angular.module('BlogApp')
   .controller('DetailsBlogCtrl', function ($scope, $routeParams, $http) {
   	var urlBase = "http://nichc-portfolio.herokuapp.com/api/";
   	var urlBlog = "entradas/"

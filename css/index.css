@@ -496,14 +496,14 @@ a {
   background: transparent;
   margin-right: 10px;
   margin-bottom: 10px;
-  padding: 5px 1em;
+  padding: 1em 1.5em;
   border: 0px;
   -webkit-border-radius: 3px 3px 3px 3px;
   -moz-border-radius: 3px 3px 3px 3px;
   -ms-border-radius: 3px 3px 3px 3px;
   -o-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
-  font-size: 1.5em;
+  font-size: 1.3em;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
@@ -597,17 +597,16 @@ a {
 }
 .contact .wrapperContact {
   width: 60%;
-  margin: 0px auto;
+  margin: 190px auto;
 }
-.contact .footContact {
+.footer {
   width: 100%;
-  position: absolute;
-  bottom: 0px;
   text-align: center;
   padding: 2em 0px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  background: rgba(54,0,50,0.6);
+  background: #360032;
+  letter-spacing: normal;
 }
 .menuDesktop {
   background: rgba(0,0,0,0.4);
@@ -742,7 +741,7 @@ a {
   letter-spacing: normal;
   z-index: 2;
 }
-.topMenu #menu {
+.topMenu #menuBtn {
   display: none;
 }
 .topMenu .avatar {
@@ -918,7 +917,7 @@ a {
     position: absolute;
     z-index: 3;
   }
-  .topMenu #menu {
+  .topMenu #menuBtn {
     display: block;
   }
   .images {
