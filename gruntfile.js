@@ -30,6 +30,15 @@ module.exports = function(grunt){
 				dest: 'js/build/libraries.min.js'
 			}, 
 		},
+		watch: {
+		  scripts: {
+		    files: 'js/*.js',
+		    tasks: ['jshint','concat','uglify'],
+		    options: {
+		      event: ['added', 'deleted'],
+		    },
+		  },
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -37,5 +46,5 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['jshint','concat','uglify']);
+	grunt.registerTask('default', ['jshint','concat','uglify','watch']);
 };
