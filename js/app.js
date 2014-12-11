@@ -1,4 +1,4 @@
-var angular
+var angular;
 
 var app = angular.module('PortafolioApp',[
 	'truncate', 
@@ -10,7 +10,7 @@ app.controller('SkillCtrl', function($scope, $http) {
   $scope.options = {
     width: 80,
     height: 80
-  }
+  };
 
   $scope.skill = [
     {

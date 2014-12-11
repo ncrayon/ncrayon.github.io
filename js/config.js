@@ -10,14 +10,13 @@ $(document).ready(function(){
 		anchors: ['about', 'skills','portfolio','contact'],
 		slidesNavigation: true,
 		loopHorizontal: true,
-		autoScrolling: false,
 		responsive: 1000,
 		afterLoad: function(anchorLink, index){
-			var maxwidth = window.matchMedia('(max-width:1000px)').matches
-			if(anchorLink == 'about' && maxwidth==false){
-				$('#header').hide();
+			var maxwidth = window.matchMedia('(max-width:1000px)').matches;
+			if(anchorLink === 'about' && maxwidth === false){
+				$('#header').fadeOut();
 			}else{
-				$('#header').show();
+				$('#header').fadeIn();
 			}
 
 			var btnAbout = $('#aboutMenu');
@@ -45,7 +44,7 @@ $(document).ready(function(){
 				btnSkills.removeClass('active');	
 				btnPortfolio.removeClass('active');	
 				btnAbout.removeClass('active');		
-			};
+			}
 		}
 	});
 
@@ -68,6 +67,6 @@ $(document).ready(function(){
 				height: '70px'
 			}, 600);
 			me.attr('data-state','plegado');
-		};
+		}
 	});
 });
