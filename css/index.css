@@ -415,6 +415,12 @@ th {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   vertical-align: middle;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 .grid-1 {
   width: 8.33333%;
@@ -457,13 +463,15 @@ th {
   padding: 10px 7px 7px 7px;
   margin-bottom: 10px;
 }
-@media screen and (max-width: 769px) {
-  .columns {
-    width: 100%;
-    margin-top: 8px;
+@media screen and (max-width: 1000px) {
+  .grid-4 {
+    width: 50%;
   }
 }
 @media screen and (max-width: 480px) {
+  .columns {
+    width: 100% !important;
+  }
   .columns img {
     width: 100%;
   }
@@ -498,7 +506,14 @@ body {
 }
 a {
   text-decoration: none;
-  color: #00baff;
+  color: #353535;
+}
+.link {
+  text-decoration: underline;
+  font-style: italic;
+}
+.link:hover {
+  text-decoration: underline;
 }
 .field {
   background: transparent;
@@ -570,7 +585,11 @@ a {
   color: #fff;
   display: inline-block;
 }
-#header .menu .itemMenu .active {
+.menu .active {
+  color: #ff7f79 !important;
+  border-bottom: 2px solid #ff7f79;
+}
+.menu a:hover {
   color: #ff7f79 !important;
 }
 .pages {
@@ -579,7 +598,7 @@ a {
   -moz-box-sizing: border-box;
 }
 .skills {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.7);
   color: #ddd;
   padding: 0px 4.3em;
 }
@@ -619,39 +638,76 @@ a {
   background: #360032;
   letter-spacing: normal;
 }
-.menuDesktop {
-  background: rgba(0,0,0,0.4);
+.about {
+  background: rgba(0,0,0,0.5);
+}
+.ContentRight {
   display: inline-block;
-  vertical-align: top;
-  width: 60%;
+  vertical-align: middle;
   overflow: hidden;
-  margin: 2em 4% 1px 3%;
-  -webkit-border-radius: 40px 40px 40px 40px;
-  -moz-border-radius: 40px 40px 40px 40px;
-  -ms-border-radius: 40px 40px 40px 40px;
-  -o-border-radius: 40px 40px 40px 40px;
-  border-radius: 40px 40px 40px 40px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 2em;
+  width: 67%;
+}
+.ContentRight .biography {
+  letter-spacing: normal;
+  color: #d8d6dd;
+  background: rgba(255,255,255,0.8);
+  -webkit-border-radius: 0px 0px 6px 6px;
+  -moz-border-radius: 0px 0px 6px 6px;
+  -ms-border-radius: 0px 0px 6px 6px;
+  -o-border-radius: 0px 0px 6px 6px;
+  border-radius: 0px 0px 6px 6px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 2em 6em;
+}
+.ContentRight .biography h1 {
+  color: #666;
+  text-align: center;
+  font-family: openSansRegular;
+  font-weight: normal;
+}
+.ContentRight .biography p {
+  color: rgba(4,4,4,0.6);
+  font-family: openSansLight;
+  font-weight: normal;
+  font-size: 1.4em;
+  line-height: 1.6em;
+}
+.ContentRight .menuDesktop {
+  background: rgba(0,0,0,0.5);
+  -webkit-border-radius: 6px 6px 0px 0px;
+  -moz-border-radius: 6px 6px 0px 0px;
+  -ms-border-radius: 6px 6px 0px 0px;
+  -o-border-radius: 6px 6px 0px 0px;
+  border-radius: 6px 6px 0px 0px;
+  display: block;
+  overflow: hidden;
+  width: auto;
+  margin: 0px auto 0px auto;
   letter-spacing: normal;
   text-align: center;
 }
-.menuDesktop .menu {
+.ContentRight .menuDesktop .menu {
   display: block;
 }
-.menuDesktop .menu .itemMenu:nth-last-child(1) {
+.ContentRight .menuDesktop .menu .itemMenu:nth-last-child(1) {
   border-right: 0px;
 }
-.menuDesktop .menu .itemMenu {
+.ContentRight .menuDesktop .menu .itemMenu {
   padding: 0px 20px;
   display: inline-block !important;
   width: auto !important;
   border-bottom: 0px;
   border-right: 1px solid rgba(255,255,255,0.2);
 }
-.menuDesktop .menu .itemMenu .icon:before {
+.ContentRight .menuDesktop .menu .itemMenu .icon:before {
   font-size: 1em !important;
-  display: inline-block;
+  display: block;
 }
-.menuDesktop .menu .itemMenu .descrip {
+.ContentRight .menuDesktop .menu .itemMenu .descrip {
   font-size: 1em;
   color: #fff;
   display: inline-block;
@@ -663,14 +719,13 @@ a {
   max-height: 100%;
   overflow: hidden;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
 }
 .wrapper {
   width: 104%;
   height: 100%;
   max-height: 100%;
   overflow-y: scroll;
-  background: rgba(0,0,0,0.4);
 }
 .wrapper .fotoPerfil {
   display: block;
@@ -866,11 +921,34 @@ a {
   line-height: 1.6em;
   color: #606060;
 }
+@media screen and (max-width: 1240px) {
+  .ContentRight .menuDesktop .menu .itemMenu .icon:before {
+    display: block;
+    font-size: 1.2em !important;
+  }
+  .ContentRight .menuDesktop .menu .itemMenu .descrip {
+    font-size: 0.9em;
+  }
+}
 @media screen and (max-width: 1000px) {
-  .menuDesktop {
+  .ContentRight {
+    width: 100%;
+    padding: 0px;
+  }
+  .ContentRight .menuDesktop {
     display: none;
   }
+  .ContentRight .biography {
+    padding: 5em 7em;
+    width: 100%;
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    -ms-border-radius: 0 0 0 0;
+    -o-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+  }
   .contentWrapper {
+    height: auto !important;
     display: block;
     margin: 0px auto;
     width: 70%;
@@ -878,6 +956,9 @@ a {
   .wrapper {
     margin: 0px auto;
     width: 100%;
+  }
+  .wrapper .fotoPerfil {
+    margin: 90px auto 38px auto;
   }
   .wrapper .menuBtn {
     height: 72px;
@@ -887,6 +968,9 @@ a {
     display: block;
   }
   .menu {
+    display: block;
+  }
+  #header {
     display: block;
   }
   .topMenu .meMenu {
@@ -935,7 +1019,11 @@ a {
     width: 100%;
   }
 }
-/*Mobile Design*/
+@media screen and (max-width: 718px) {
+  #header {
+    font-size: 0.9em;
+  }
+}
 @media screen and (max-width: 667px) {
   .contentWrapper {
     margin: 0px auto;
@@ -959,6 +1047,22 @@ a {
   }
   .wrapper .content .btn-social:before {
     top: 3px;
+  }
+  .ContentRight {
+    width: 100%;
+    padding: 0px;
+  }
+  .ContentRight .menuDesktop {
+    display: none;
+  }
+  .ContentRight .biography {
+    padding: 1em 2em;
+    width: 100%;
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    -ms-border-radius: 0 0 0 0;
+    -o-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
   }
   .wrapperMe {
     height: 100%;

@@ -10,32 +10,41 @@ $(document).ready(function(){
 		anchors: ['about', 'skills','portfolio','contact'],
 		slidesNavigation: true,
 		loopHorizontal: true,
-		autoScrolling: true,
+		autoScrolling: false,
 		responsive: 1000,
 		afterLoad: function(anchorLink, index){
-			var maxwidth = window.matchMedia('(max-width:768px)').matches
+			var maxwidth = window.matchMedia('(max-width:1000px)').matches
 			if(anchorLink == 'about' && maxwidth==false){
 				$('#header').hide();
 			}else{
 				$('#header').show();
 			}
 
+			var btnAbout = $('#aboutMenu');
 			var btnSkills = $('#skillsMenu');
 			var btnPortfolio = $('#portfolioMenu');
 			var btnContact = $('#contactMenu');
-
-			if (anchorLink == 'skills') {
+			
+			if (anchorLink == 'about') {
+				btnAbout.addClass('active');
+				btnSkills.removeClass('active');
+				btnPortfolio.removeClass('active');
+				btnContact.removeClass('active');
+			}else if (anchorLink == 'skills') {
 				btnSkills.addClass('active');
 				btnPortfolio.removeClass('active');
 				btnContact.removeClass('active');
+				btnAbout.removeClass('active');
 			}else if (anchorLink == 'portfolio') {
 				btnPortfolio.addClass('active');
 				btnSkills.removeClass('active');
-				btnContact.removeClass('active');				
+				btnContact.removeClass('active');	
+				btnAbout.removeClass('active');			
 			}else if (anchorLink == 'contact') {
 				btnContact.addClass('active');
 				btnSkills.removeClass('active');	
-				btnPortfolio.removeClass('active');			
+				btnPortfolio.removeClass('active');	
+				btnAbout.removeClass('active');		
 			};
 		}
 	});

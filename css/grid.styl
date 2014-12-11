@@ -9,6 +9,11 @@
   padding 0px 5px 0px 5px
   box-sizing(border-box)
   vertical-align: middle
+  -webkit-transition: all 1s 
+  -moz-transition: all 1s 
+  -ms-transition: all 1s 
+  -o-transition: all 1s 
+  transition: all 1s
   
 .grid-1  
   width 8.33333%
@@ -50,13 +55,13 @@
   border-bottom 2px solid #ddd
   padding 10px 7px 7px 7px
   margin-bottom 10px
-  
-@media screen and (max-width:769px)
-  .columns
-    width 100%
-    margin-top 8px
+
+@media screen and (max-width:1000px)
+  .grid-4
+    width 50% 
       
 @media screen and (max-width:480px)
   .columns
+    width 100% !important
     & img
       width 100%
