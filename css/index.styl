@@ -3,6 +3,7 @@
 @import 'fonts'
 @import 'fullpages'
 @import 'grid'
+@import 'nib/images'
 
 
 
@@ -17,7 +18,7 @@ body
   padding: 0
   color: #fff
   font-family: openSansRegular, arial, helvetica
-  background-image: url('../img/bg.jpg')
+  image('../img/bg.jpg')
   background-size: cover
   background-repeat: no-repeat
   background-position: top center
@@ -86,6 +87,8 @@ a
         font-size 1em
         color white
         display inline-block
+      & .active 
+        color #ff7f79 !important
  
 .pages
    letter-spacing normal
