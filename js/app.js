@@ -144,14 +144,15 @@ app.controller('SkillCtrl', function($scope, $http) {
 
 app.controller('ContactCtrl', function($scope, $http) {
     var urlBase = 'http://nichc-portfolio.herokuapp.com/sendmail';
-    var jsonP = '&callback=JSON_CALLBACK'; 
+    var jsonP = '?callback=JSON_CALLBACK'; 
+    var formData = {
+      'name': $scope.name,
+      'mail': $scope.mail,
+      'msg': $scope.msg,
+    };
 
     $scope.sendmail = function() {
-        $http.get(urlBase+
-          '?name='+$scope.name+
-          '&mail='+$scope.mail+
-          '&msg='+$scope.msg
-          )
+        $http.post(urlBase+jsonP, formData)
          .success(function(data){
             $scope.response = data;
         })
