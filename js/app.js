@@ -140,5 +140,29 @@ app.controller('SkillCtrl', function($scope, $http) {
       ]
     },
   ];
+});
+
+app.controller('ContactCtrl', function($scope, $http) {
+    var urlBase = 'http://nichc-portfolio.herokuapp.com/sendmail';
+    var jsonP = '&callback=JSON_CALLBACK'; 
+
+    $scope.sendmail = function() {
+        $http.get(urlBase+
+          '?name='+$scope.name+
+          '&mail='+$scope.mail+
+          '&msg='+$scope.msg
+          )
+         .success(function(data){
+            $scope.response = data;
+        })
+        .error(function (data, status) {
+            console.log(status);
+        });
+    };
 
 });
+
+
+
+
+

@@ -6,7 +6,7 @@
 	<meta name="description" content="Ingeniero en Tecnológias de Información y Comunicacion, desarrollador de Backend con Django y Frontend con AngularJS, Desarrollador de Aplicaciones Mobiles para iDevices">
 	<link rel="stylesheet" href="css/index.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<script>
+	<!--  <script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -15,7 +15,7 @@
 		  ga('create', 'UA-54610040-3', 'auto');
 		  ga('send', 'pageview');
 
-	</script>
+	</script>-->
 </head>
 <body>
 	<div id="header">
@@ -178,23 +178,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="contact section pages" >
+		<div class="contact section pages" ng-controller="ContactCtrl">
 			<div class="wrapperContact">
 				<div class="rows">
 					<div class="columns grid-12">
 						<h1>Contactame</h1>
 					</div>
-					<div class="columns grid-6" >
-						<input class="field fieldContact" type="text" placeholder="Tu Nombre">
-					</div>
-					<div class="columns grid-6" >
-						<input class="field fieldContact" type="mail" placeholder="Tu Correo">
-					</div>
-					<div class="columns grid-12" >
-						<textarea  class="field fieldContact" name="" id="" cols="10" rows="5">
-							
-						</textarea>
-					</div>
+					<form ng-submit="sendmail()">
+						<div class="columns grid-6" >
+							<input class="field fieldContact" type="text" placeholder="Tu Nombre" ng-model="name">
+						</div>
+						<div class="columns grid-6" >
+							<input class="field fieldContact" type="mail" placeholder="Tu Correo" ng-model="mail">
+						</div>
+						<div class="columns grid-12" >
+							<textarea  class="field fieldContact" name="" id="" cols="10" rows="5" ng-model="msg">
+								
+							</textarea>
+						</div>	
+						<div class="columns grid-12" >
+							<button type="submit">Enviar</button>
+						</div>						
+					</form>
 				</div>
 			</div>
 		</div>
