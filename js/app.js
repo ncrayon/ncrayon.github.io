@@ -142,25 +142,39 @@ app.controller('SkillCtrl', function($scope, $http) {
   ];
 });
 
-app.controller('ContactCtrl', function($scope, $http) {
+app.controller('ContactCtrl', function($scope, $http, $timeout) {
     var urlBase = 'http://nichc-portfolio.herokuapp.com/sendmail';
-    var jsonP = '?callback=JSON_CALLBACK'; 
-    var formData = {
-      'name': $scope.name,
-      'mail': $scope.mail,
-      'msg': $scope.msg,
-    };
+    var jsonP = '&callback=JSON_CALLBACK'; 
+
+    $scope.name = '';
+    $scope.mail = '';
+    $scope.msg = '';
 
     $scope.sendmail = function() {
-        $http.post(urlBase+jsonP, formData)
+      if($scope.name==='' || $scope.mail==='' || $scope.msg===''){
+        $scope.response = 'No Deje Campos en Blanco, Por Favor';
+        $scope.responseClass = 'warning';
+        $timeout(function(){ 
+          $scope.responseClass = 'hide';
+        }, 4000);
+      }else{
+        $http.get(urlBase+
+          '?name='+$scope.name+
+          '&mail='+$scope.mail+
+          '&msg='+$scope.msg
+          )
          .success(function(data){
             $scope.response = data;
+            $scope.responseClass = 'success';
+            $timeout(function(){ 
+              $scope.responseClass = 'hide';
+            }, 4000);
         })
         .error(function (data, status) {
             console.log(status);
         });
-    };
-
+      }
+    };      
 });
 
 

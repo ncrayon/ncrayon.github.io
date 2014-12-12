@@ -49,15 +49,24 @@
   margin-top: -38px
 
 .fp-controlArrow.fp-prev
-  left: 15px
-  width: 0
-  border-width: 38.5px 34px 38.5px 0
-  border-color: transparent #ddd transparent transparent
+  left: 20px
+  border 0px
+  &:before
+    position: absolute
+    font-family: Flaticon
+    font-size: 4em
+    font-style: normal
+    content: "\e008"
 
 .fp-controlArrow.fp-next
-  right: 15px
-  border-width: 38.5px 0 38.5px 34px
-  border-color: transparent transparent transparent #ddd
+  right: 50px
+  border 0px
+  &:before
+    position: absolute
+    font-family: Flaticon
+    font-size: 4em
+    font-style: normal
+    content: "\e004"
 
 /*Mobile Design*/
 @media screen and (max-width: 667px)

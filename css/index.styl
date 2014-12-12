@@ -55,7 +55,7 @@ a
 
 .btn
   background transparent
-  display block
+  display inline-block
   
 .btn:focus
   outline none
@@ -136,7 +136,38 @@ a
   & .wrapperContact
     width 60%
     margin 190px auto
+  
+.btnContact
+  radius(4px,4px,4px,4px)
+  box-sizing(border-box)
+  padding .3em 2em
+  font-size 1.4em
+  border 2px solid #c3c3c3
+  &:hover
+    color #4a1842
+    background rgba(255, 255, 255, .75)
+    border 2px solid transparent
 
+.warning
+  display inline-block
+  box-sizing(border-box)
+  padding .3em 2em 
+  radius(5px,5px,5px,5px)
+  background #E74C3C
+  border-bottom 2px solid #C0392B
+
+.success
+  display inline-block
+  box-sizing(border-box)
+  padding .3em 2em 
+  radius(5px,5px,5px,5px)
+  color #1C6F3F
+  background #2ECC71
+  border-bottom 2px solid #1C6F3F
+
+.hide
+  display none
+  
 .footer
   width 100%
   text-align center
