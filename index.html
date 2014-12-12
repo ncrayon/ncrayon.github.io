@@ -23,7 +23,7 @@
 		<ul class="menu">
 			<li class="itemMenu">
 				<a href="#about" id="aboutMenu" class="descrip">
-					<i class="icon flaticon-about"></i>
+					<i class="icon flaticon-me"></i>
 					Yo
 				</a>
 			</li>
@@ -40,7 +40,7 @@
 				</a>
 			</li>
 			<li class="itemMenu">
-				<a href="/blog" class="descrip">
+				<a href="/apps/#blog" class="descrip">
 					<i class="icon flaticon-blog"></i>
 					Blog
 				</a>
@@ -75,7 +75,7 @@
 					<ul class="menu">
 						<li class="itemMenu">
 							<a href="#about" class="descrip active">
-								<i class="icon flaticon-about"></i>
+								<i class="icon flaticon-me"></i>
 								Yo
 							</a>
 						</li>
@@ -92,7 +92,7 @@
 							</a>
 						</li>
 						<li class="itemMenu">
-							<a href="/blog" class="descrip">
+							<a href="/apps/#blog" class="descrip">
 								<i class="icon flaticon-blog"></i>
 								Blog
 							</a>
@@ -135,45 +135,15 @@
 		    	</div>
 			</div>
 		</div>
-		<div class="portfolio section pages" >
+		<div class="portfolio section pages" ng-controller="ProjectsCtrl">
 			<div class="rows">
 				<div class="columns grid-12">
 					<h1>Portafolio</h1>
 				</div>
-				<div class="columns grid-4">
+				<div class="columns grid-4" ng-repeat="project in projects">
 					<figure class="figPortfolio">
-						<img class="imgPortfolio" src="/img/portafolio.jpg" width="100%" alt="">
-						<figcaption class="captionPortfolio">Nombre Proyecto</figcaption>
-					</figure>
-				</div>
-				<div class="columns grid-4">
-					<figure class="figPortfolio">
-						<img class="imgPortfolio" src="/img/portafolio.jpg" width="100%" alt="">
-						<figcaption class="captionPortfolio">Nombre Proyecto</figcaption>
-					</figure>
-				</div>
-				<div class="columns grid-4">
-					<figure class="figPortfolio">
-						<img class="imgPortfolio" src="/img/portafolio.jpg" width="100%" alt="">
-						<figcaption class="captionPortfolio">Nombre Proyecto</figcaption>
-					</figure>
-				</div>
-				<div class="columns grid-4">
-					<figure class="figPortfolio">
-						<img class="imgPortfolio" src="/img/portafolio.jpg" width="100%" alt="">
-						<figcaption class="captionPortfolio">Nombre Proyecto</figcaption>
-					</figure>
-				</div>
-				<div class="columns grid-4">
-					<figure class="figPortfolio">
-						<img class="imgPortfolio" src="/img/portafolio.jpg" width="100%" alt="">
-						<figcaption class="captionPortfolio">Nombre Proyecto</figcaption>
-					</figure>
-				</div>
-				<div class="columns grid-4">
-					<figure class="figPortfolio">
-						<img class="imgPortfolio" src="/img/portafolio.jpg" width="100%" alt="">
-						<figcaption class="captionPortfolio">Nombre Proyecto</figcaption>
+						<img class="imgPortfolio" ng-src="{{project.featuredImage}}" width="100%" alt="">
+						<figcaption class="captionPortfolio">{{project.title}}</figcaption>
 					</figure>
 				</div>
 			</div>
@@ -192,7 +162,7 @@
 							<input class="field fieldContact" type="mail" placeholder="Tu Correo" ng-model="mail">
 						</div>
 						<div class="columns grid-12" >
-							<textarea  class="field fieldContact" name="" id="" cols="10" rows="5" ng-model="msg">
+							<textarea  class="field fieldContact" name="" id="" cols="10" rows="5" ng-model="msg" placeholder="Tu Mensaje">
 								
 							</textarea>
 						</div>	

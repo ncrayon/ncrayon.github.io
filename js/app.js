@@ -151,6 +151,9 @@ app.controller('ContactCtrl', function($scope, $http, $timeout) {
     $scope.msg = '';
 
     $scope.sendmail = function() {
+      $scope.responseClass = 'flaticon-load';
+      $scope.response = '';
+
       if($scope.name==='' || $scope.mail==='' || $scope.msg===''){
         $scope.response = 'No Deje Campos en Blanco, Por Favor';
         $scope.responseClass = 'warning';
@@ -175,6 +178,22 @@ app.controller('ContactCtrl', function($scope, $http, $timeout) {
         });
       }
     };      
+});
+
+app.controller('ProjectsCtrl', function($scope, $http, $timeout) {
+    var urlBase = 'http://nichc-portfolio.herokuapp.com/api/proyectos';
+    var jsonP = '&callback=JSON_CALLBACK';   
+
+    //funcion para cargar datos
+    $scope.loadData = function() {
+        $http.get(urlBase,{ cache: true}).success(function(data){
+            $scope.projects = data;
+        })
+        .error(function (data, status) {
+          console.log(status);
+        });
+    };
+    $scope.loadData();
 });
 
 
