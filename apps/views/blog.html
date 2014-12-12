@@ -1,0 +1,12 @@
+<div class="page">
+	<div ng-repeat="item in listadoEntradas">
+		<a ng-href="#blog/{{item.id}}">	
+			<img class="images" ng-src="{{item.featuredImage}}" alt="">
+			<h1 class="title">{{item.title}}</h1>
+		</a>
+		<h3 class="date">Escrito por: {{item.author}} | {{item.fecha | date:'fullDate'}}</h3>
+		<p class="paragraph" ng-bind-html-unsafe="item.content | words:25"></p>
+		<hr class="separatorBlog">
+	</div>
+	<h2 class="{{responseClass}}">{{response}}</h2>
+</div>
