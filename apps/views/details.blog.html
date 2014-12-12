@@ -1,7 +1,11 @@
 <div class="page">
-		<img class="images" ng-src="{{entrada.featuredImage}}" alt="">
-		<a ng-href="/me/#/blog/{{entrada.id}}"><h1 class="title">{{entrada.title}}</h1></a>
-		<h3 class="date">Escrito por: {{entrada.author}} | {{entrada.fecha | date:'fullDate'}}</h3>
-		<p class="paragraph" ng-bind-html-unsafe="entrada.content"></p>
-		<h2 class="{{responseClass}}">{{response}}</h2>
+	<ul class="breadcrumbs">
+		<li class="item"><a href="#blog">Todas Las Entradas</a></li>
+		<li class="item">{{entrada.title}}</li>
+	</ul>		
+	<img class="images" ng-src="{{entrada.featuredImage}}" alt="">
+	<a ng-href="/me/#/blog/{{entrada.id}}"><h1 class="title">{{entrada.title}}</h1></a>
+	<h3 class="date">Escrito por: {{entrada.author}} | {{entrada.fecha | date:'fullDate'}}</h3>
+	<p class="paragraph" ng-bind-html-unsafe="entrada.content"></p>
+	<h2 class="{{responseClass}}">{{response}}</h2>
 </div>

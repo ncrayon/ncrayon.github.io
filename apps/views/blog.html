@@ -1,5 +1,5 @@
 <div class="page">
-	<div ng-repeat="item in listadoEntradas">
+	<div ng-repeat="item in listadoEntradas | orderBy:'fecha'">
 		<a ng-href="#blog/{{item.id}}">	
 			<img class="images" ng-src="{{item.featuredImage}}" alt="">
 			<h1 class="title">{{item.title}}</h1>
