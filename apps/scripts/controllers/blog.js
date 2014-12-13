@@ -10,7 +10,7 @@
 var angular;
 angular.module('BlogApp')
   .controller('BlogCtrl', function ($scope, $http) {
-  	var urlBase = "http://nichc-portfolio.herokuapp.com/api/";
+  	var urlBase = "http://localhost:8000/api/";
   	var urlBlog = "entradas/"
   	var jsonP = '?callback=JSON_CALLBACK';
 

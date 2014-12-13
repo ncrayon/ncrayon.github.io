@@ -143,7 +143,11 @@
 				<div class="columns grid-4" ng-repeat="project in projects">
 					<figure class="figPortfolio">
 						<img class="imgPortfolio" ng-src="{{project.featuredImage}}" width="100%" alt="">
-						<figcaption class="captionPortfolio">{{project.title}}</figcaption>
+						<figcaption >
+							<span class="titlePortfolio">{{project.title}}</span>
+							<hr>
+							<span class="subtitlePortfolio">{{project.subtitle}}</span>
+						</figcaption>
 					</figure>
 				</div>
 			</div>
