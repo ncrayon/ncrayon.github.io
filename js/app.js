@@ -181,7 +181,7 @@ app.controller('ContactCtrl', function($scope, $http, $timeout) {
 });
 
 app.controller('ProjectsCtrl', function($scope, $http, $timeout) {
-    var urlBase = 'http://localhost:8000/api/proyectos';
+    var urlBase = 'http://nichc-portfolio.herokuapp.com/api/proyectos';
     var jsonP = '&callback=JSON_CALLBACK';   
 
     //funcion para cargar datos
