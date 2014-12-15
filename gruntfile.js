@@ -33,7 +33,7 @@ module.exports = function(grunt){
 					'apps/scripts/controllers/details.projects.js',
 					'js/directives/truncate.js',
 					'js/directives/infinite-scroll.min.js',
-
+					'js/directives/viewhead.js'
 					],
 				dest: 'js/build/apps.js'
 			},
@@ -58,14 +58,9 @@ module.exports = function(grunt){
 				dest: 'js/build/lib.app.min.js'
 			},
 		},
-		watch: {
-		  scripts: {
-		    files: 'js/*.js',
-		    tasks: ['jshint','concat','uglify'],
-		    options: {
-		      event: ['added', 'deleted'],
-		    },
-		  },
+	    watch: {
+		   files: ['js/*','apps/scripts/*','apps/scripts/controllers/*'],
+		   tasks: ['jshint','concat','uglify'],
 		},
 	});
 

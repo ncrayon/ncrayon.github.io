@@ -102,6 +102,7 @@ var angular
 angular.module('BlogApp',[
 	'truncate',
   'infinite-scroll',
+  'viewhead'
 ])
 .config(function ($routeProvider) {
     /* rutas */
@@ -211,7 +212,7 @@ angular.module('BlogApp')
     $scope.loadData = function() {
         $scope.responseClass = 'flaticon-loadBlog';
         
-        $http.get(urlBase + urlBlog + idEntrada + jsonP, { cache: true})
+        $http.get(urlBase + urlBlog + idEntrada, { cache: true})
         .success(function(data){
             $scope.entrada = data;
             $scope.responseClass = 'hide';
@@ -354,3 +355,70 @@ angular.module('truncate', [])
     });
 /* ng-infinite-scroll - v1.0.0 - 2013-02-23 */
 var mod;mod=angular.module("infinite-scroll",[]),mod.directive("infiniteScroll",["$rootScope","$window","$timeout",function(i,n,e){return{link:function(t,l,o){var r,c,f,a;return n=angular.element(n),f=0,null!=o.infiniteScrollDistance&&t.$watch(o.infiniteScrollDistance,function(i){return f=parseInt(i,10)}),a=!0,r=!1,null!=o.infiniteScrollDisabled&&t.$watch(o.infiniteScrollDisabled,function(i){return a=!i,a&&r?(r=!1,c()):void 0}),c=function(){var e,c,u,d;return d=n.height()+n.scrollTop(),e=l.offset().top+l.height(),c=e-d,u=n.height()*f>=c,u&&a?i.$$phase?t.$eval(o.infiniteScroll):t.$apply(o.infiniteScroll):u?r=!0:void 0},n.on("scroll",c),t.$on("$destroy",function(){return n.off("scroll",c)}),e(function(){return o.infiniteScrollImmediateCheck?t.$eval(o.infiniteScrollImmediateCheck)?c():void 0:c()},0)}}}]);
+
+(function (angular, document) {
+
+     var mod = angular.module('viewhead', []);
+
+     mod.directive(
+         'viewTitle',
+         ['$rootScope', function ($rootScope) {
+             return {
+                 restrict: 'EA',
+                 link: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                     // If we've been inserted as an element then we detach from the DOM because the caller
+                     // doesn't want us to have any visual impact in the document.
+                     // Otherwise, we're piggy-backing on an existing element so we'll just leave it alone.
+                     var tagName = iElement[0].tagName.toLowerCase();
+                     if (tagName === 'view-title' || tagName === 'viewtitle') {
+                         iElement.remove();
+                     }
+
+                     scope.$watch(
+                         function () {
+                             return iElement.text();
+                         },
+                         function (newTitle) {
+                             $rootScope.viewTitle = newTitle;
+                         }
+                     );
+                     scope.$on(
+                         '$destroy',
+                         function () {
+                             delete $rootScope.viewTitle;
+                         }
+                     );
+                 }
+             };
+         }]
+     );
+
+     mod.directive(
+         'viewHead',
+         function () {
+             var head = angular.element(document.head);
+             return {
+                 restrict: 'A',
+                 link: function (scope, iElement, iAttrs, controller, transcludeFn) {
+                     // Move the element into the head of the document.
+                     // Although the physical location of the document changes, the element remains
+                     // bound to the scope in which it was declared, so it can refer to variables from
+                     // the view scope if necessary.
+                     head.append(iElement);
+
+                     // When the scope is destroyed, remove the element.
+                     // This is on the assumption that we're being used in some sort of view scope.
+                     // It doesn't make sense to use this directive outside of the view, and nor does it
+                     // make sense to use it inside other scope-creating directives like ng-repeat.
+                     scope.$on(
+                         '$destroy',
+                         function () {
+                             iElement.remove();
+                         }
+                     );
+                 }
+             };
+         }
+     );
+
+})(angular, document);

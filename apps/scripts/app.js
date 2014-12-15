@@ -3,6 +3,7 @@ var angular
 angular.module('BlogApp',[
 	'truncate',
   'infinite-scroll',
+  'viewhead'
 ])
 .config(function ($routeProvider) {
     /* rutas */

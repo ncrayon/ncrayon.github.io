@@ -5,3 +5,4 @@ tmp-cache/
 js/dist
 .DS_Store
 css/animate-stylus
+aws-credentials.json
