@@ -2,16 +2,16 @@
 
 /**
  * @ngdoc function
- * @name frontendMatriculaApp.controller:DetailsBlogCtrl
+ * @name frontendMatriculaApp.controller:DetailsProjectsCtrl
  * @description
- * # DetailsBlogCtrl
+ * # DetailsProjectsCtrl
  * Controller of the frontendMatriculaApp
  */
 var angular;
 angular.module('BlogApp')
-  .controller('DetailsBlogCtrl', function ($scope, $routeParams, $http) {
+  .controller('DetailsProjectsCtrl', function ($scope, $routeParams, $http) {
   	var urlBase = "http://d3ka4gl7g4ooi1.herokuapp.com/api/";
-  	var urlBlog = "post/";
+  	var urlBlog = "project/";
     var jsonP = '?callback=JSON_CALLBACK';
 	  var idEntrada = $scope.id = $routeParams.id;
 
@@ -21,7 +21,7 @@ angular.module('BlogApp')
         
         $http.get(urlBase + urlBlog + idEntrada + jsonP, { cache: true})
         .success(function(data){
-            $scope.entrada = data;
+            $scope.proyectos = data;
             $scope.responseClass = 'hide';
         })
         .error(function (data, status) {

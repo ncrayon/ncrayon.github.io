@@ -1,7 +1,9 @@
 $(document).ready(function(){
-	$('.blur').blurjs({
-		overlay: 'rgba(0,0,0,0.4)',
-		radius:50
+	$( document ).on( 'click', '.btnTop', function () {
+		var body = $("html, body");
+		body.animate({scrollTop:0}, '500', 'swing', function() { 
+		   
+		});
 	});
 
 	$( document ).on( 'click', '#menuBtn', function () {

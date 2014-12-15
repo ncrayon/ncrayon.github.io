@@ -2,40 +2,43 @@
 <html lang="es" ng-app="BlogApp">
 <head>
 	<meta charset="UTF-8">
-	<title>Nelkit Chávez | UI/UX Designer & Front End Developer</title>
+	<title ng-bind="title + ' | Nelkit Chávez'"></title>
 	<link rel="stylesheet" href="../css/index.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body>
-	<div class="topMenu">
+	<div class="topMenu" id="top">
 		<a href="/"><img src="../img/perfil.jpg" width="156" height="156" class="avatar" alt=""></a>
 		<ul class="meMenu">
-			<li class="itemMenu"><a href="/#about">Yo</a></li>
+			<li class="itemMenu"><a href="/#about">Inicio</a></li>
 			<li class="itemMenu"><a href="/#skills">Habilidades</a></li>
-			<li class="itemMenu"><a href="/#portfolio">Portafolio</a></li>
-			<li class="itemMenu active"><a href="#blog">Blog</a></li>
+			<li class="itemMenu"><a href="/#portfolio" class="{{isActiveProject}}">Portafolio</a></li>
+			<li class="itemMenu"><a href="#blog" class="{{isActiveBlog}}">Blog</a></li>
 			<li class="itemMenu"><a href="/#contact">Contacto</a></li>
 		</ul>
 		<button id="menuBtn" data-state="plegado" class="btn"><i class="flaticon-menu"></i></button>
 	</div>
 	<div class="wrapperMe">
-		<div class="view" ng-view></div>	
+		<div class="view" ng-view></div>
+		<div class="bottomMe">
+			<a class="btnTop"></a>
+			<div class="columns grid-12">
+				<a href="https://twitter.com/cnelkit" target="_blank" class="socialContact flaticon-twitter twitter" href="https://twitter.com/cnelkit"></a>
+				<a href="https://github.com/nelkit" target="_blank" class="socialContact flaticon-github github" href="https://github.com/nelkit"></a>
+				<a href="https://www.behance.net/nelkitisaef6da" target="_blank" class="socialContact flaticon-behance behance" href="https://www.behance.net/nelkitisaef6da"></a>
+				<a href="https://dribbble.com/cnelkit" target="_blank" class="socialContact flaticon-dribbble dribbble" href="https://dribbble.com/cnelkit"></a>
+				<a href="https://www.linkedin.com/pub/nelkit-chavez-calona/94/53a/b05" target="_blank" class="socialContact flaticon-linkedin linkedin" href="https://www.linkedin.com/pub/nelkit-chavez-calona/94/53a/b05"></a>
+			</div>
+			<p>UX, Design and Backend by Nelkit Chavez, Powered by AngularJS & Django | All rights reserved 2014 ©</p>
+		</div>	
 	</div>
 	<!-- Frameworks -->
 	<script type='text/javascript' src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
-	<!-- ngApp -->
-	<script type='text/javascript' src='scripts/app.js'></script>
-	<!-- ngControllers -->
-	<script type='text/javascript' src='scripts/controllers/blog.js'></script>
-	<script type='text/javascript' src='scripts/controllers/details.blog.js'></script>
-	<!-- ngDirectives -->
-	<script type='text/javascript' src='../js/directives/truncate.js'></script>
-	<script type='text/javascript' src='../js/directives/infinite-scroll.min.js'></script>
+	<!-- <script src="../js/vendor/jquery.js"></script>
+	<script src="../js/vendor/angular.min.js"></script> -->
+	<script type='text/javascript' src='../js/build/apps.js'></script>
 	<!-- Libraries -->
-	<script type='text/javascript' src='../js/vendor/blur.js'></script>
-	<script type='text/javascript' src='../js/vendor/retina.min.js'></script>
-	<!-- config -->
-	<script type='text/javascript' src='scripts/config.js'></script>
+	<script type='text/javascript' src='../js/build/lib.app.min.js'></script>
 </body>
 </html>

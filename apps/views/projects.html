@@ -1,0 +1,29 @@
+<div class="page">
+	<div class="containerProjects">
+		<div class="rows">
+			<div class="columns grid-12">
+				<h1>Todos Mis Proyectos</h1>
+			</div>
+			<div infinite-scroll="pagingLoad()" infinite-scroll-distance="40">
+				<div class="columns grid-6 fadeIn" ng-repeat="project in projects | orderBy:'-fecha'">
+					<a href="/apps/#projects/{{project.id}}">
+						<figure class="figPortfolio">
+							<img class="imgPortfolio" ng-src="{{project.featuredImage}}" width="100%" alt="">
+							<figcaption >
+								<div class="categoryProject">
+									<span ng-repeat="item in project.categoryRel">{{item.name}}</span>
+								</div>
+								<span class="titlePortfolio">{{project.title}}</span>
+								<hr>
+								<span class="subtitlePortfolio">{{project.subtitle}}</span>
+							</figcaption>
+						</figure>						
+					</a>
+				</div>
+				<div class="columns grid-12">
+					<h2 class="{{responseClass}}">{{response}}</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

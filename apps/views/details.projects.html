@@ -1,0 +1,19 @@
+<div class="page">
+	<ul class="breadcrumbs">
+		<li class="item"><a href="#projects">Todas Mis Proyectos</a></li>
+		<li class="item">{{proyectos.title}}</li>
+	</ul>
+	<img class="images mainImage" ng-src="{{proyectos.mainImage}}" alt="">
+	<div class="containerCategory">
+		<div class="categoryProject">
+			<span ng-repeat="item in proyectos.categoryRel">{{item.name}}</span>
+		</div>		
+	</div>	
+	<div class="paragraph descrip">
+		<h1 class="title">{{proyectos.title}}</h1>	
+		<hr>
+		<h3 class="date">{{proyectos.subtitle}}</h3>	
+		<p ng-bind-html-unsafe="proyectos.content"></p>
+	</div>
+	<h2 class="{{responseClass}}">{{response}}</h2>
+</div>

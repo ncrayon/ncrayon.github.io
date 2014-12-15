@@ -143,7 +143,7 @@ app.controller('SkillCtrl', function($scope, $http) {
 });
 
 app.controller('ContactCtrl', function($scope, $http, $timeout) {
-    var urlBase = 'http://nichc-portfolio.herokuapp.com/sendmail';
+    var urlBase = 'http://d3ka4gl7g4ooi1.herokuapp.com/sendmail';
     var jsonP = '&callback=JSON_CALLBACK'; 
 
     $scope.name = '';
@@ -177,17 +177,43 @@ app.controller('ContactCtrl', function($scope, $http, $timeout) {
             console.log(status);
         });
       }
-    };      
+    }; 
+
+    $scope.social = [
+      {
+        link: 'https://twitter.com/cnelkit',
+        classes: 'flaticon-twitter twitter',
+      },
+      {
+        link: 'https://github.com/nelkit',
+        classes: 'flaticon-github github',
+      },
+      {
+        link: 'https://www.behance.net/nelkitisaef6da',
+        classes: 'flaticon-behance behance',
+      },
+      {
+        link: 'https://dribbble.com/cnelkit',
+        classes: 'flaticon-dribbble dribbble',
+      },
+      {
+        link: 'https://www.linkedin.com/pub/nelkit-chavez-calona/94/53a/b05',
+        classes: 'flaticon-linkedin linkedin',
+      },
+    ];     
 });
 
 app.controller('ProjectsCtrl', function($scope, $http, $timeout) {
-    var urlBase = 'http://nichc-portfolio.herokuapp.com/api/proyectos';
+    var urlBase = 'http://d3ka4gl7g4ooi1.herokuapp.com/api/projects?min=0&max=6';
     var jsonP = '&callback=JSON_CALLBACK';   
 
     //funcion para cargar datos
     $scope.loadData = function() {
+        $scope.responseClass = 'flaticon-loadBlog';
+       
         $http.get(urlBase,{ cache: true}).success(function(data){
             $scope.projects = data;
+            $scope.responseClass = 'hide';
         })
         .error(function (data, status) {
           console.log(status);

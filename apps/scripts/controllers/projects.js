@@ -9,14 +9,14 @@
  */
 var angular;
 angular.module('BlogApp')
-  .controller('BlogCtrl', function ($scope, $http) {
+  .controller('ProjectsCtrl', function ($scope, $http) {
   	var urlBase = "http://d3ka4gl7g4ooi1.herokuapp.com/api/";
-  	var urlBlog = "posts/"
+  	var urlBlog = "projects/"
   	var jsonP = '?min=0&max=12';
     var postLoaded = {
       cargados: 0, 
     }
-    $scope.listadoEntradas = []
+    $scope.projects = []
 
   	//funcion para cargar datos
     $scope.loadData = function(min,max) {
@@ -25,7 +25,7 @@ angular.module('BlogApp')
         $http.get(urlBase + urlBlog + '?min='+min+'&max='+max, { cache: true})
         .success(function(data){
             if(data.length === 1){
-              $scope.listadoEntradas.push(data[0])
+              $scope.projects.push(data[0])
             }
             $scope.responseClass = 'hide';
         })

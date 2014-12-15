@@ -22,13 +22,41 @@ module.exports = function(grunt){
 					'js/directives/angular-chart.js',
 					],
 				dest: 'js/build/main.js'
-			}, 
+			}, 				 
+			angularBlogAndProject:{
+				src:[
+					'js/vendor/angular-locale_es-es.js',
+					'apps/scripts/app.js',
+					'apps/scripts/controllers/blog.js',
+					'apps/scripts/controllers/details.blog.js',
+					'apps/scripts/controllers/projects.js',
+					'apps/scripts/controllers/details.projects.js',
+					'js/directives/truncate.js',
+					'js/directives/infinite-scroll.min.js',
+
+					],
+				dest: 'js/build/apps.js'
+			},
+			librariesBlogAndProject:{
+				src:[
+					'js/vendor/retina.min.js',
+					'apps/scripts/config.js',
+					],
+				dest: 'js/dist/lib.app.js'
+			},
 		},
 		uglify:{
 			libraries:{
 				src: 'js/dist/libraries.js',
 				dest: 'js/build/libraries.min.js'
 			}, 
+			librariesBlogAndProject:{
+				src:[
+					'js/vendor/retina.min.js',
+					'apps/scripts/config.js',
+					],
+				dest: 'js/build/lib.app.min.js'
+			},
 		},
 		watch: {
 		  scripts: {
