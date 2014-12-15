@@ -169,6 +169,9 @@ app.controller('ContactCtrl', function($scope, $http, $timeout) {
          .success(function(data){
             $scope.response = data;
             $scope.responseClass = 'success';
+            $scope.name = '';
+            $scope.mail = '';
+            $scope.msg = '';
             $timeout(function(){ 
               $scope.responseClass = 'hide';
             }, 4000);
