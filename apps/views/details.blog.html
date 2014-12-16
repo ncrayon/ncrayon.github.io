@@ -1,14 +1,14 @@
 <view-title>{{entrada.title}} | Blog de UI/UX, Front End & Back End Developer</view-title>
 <div class="page">
 	<ul class="breadcrumbs">
-		<li class="item"><a href="#/blog">Todas Las Entradas</a></li>
+		<li class="item"><a href="#!/blog">Todas Las Entradas</a></li>
 		<li class="item">{{entrada.title}}</li>
 	</ul>		
 	<div class="paragraph">
 		<img class="images" ng-src="{{entrada.featuredImage}}" alt="">
 		<h1 class="title">{{entrada.title}}</h1>
 		<h2 class="date">Escrito por: {{entrada.author}} | {{entrada.date | date:'fullDate'}}</h2>
-		<p class="descrip" ng-bind-html-unsafe="entrada.content"></p>
+		<p class="descrip" ng-bind-html="entrada.content | unsafe"></p>
 	</div>
 	<h2 class="{{responseClass}}">{{response}}</h2>
     <div disqus="id"></div>

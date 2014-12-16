@@ -7,7 +7,7 @@
 			</div>
 			<div infinite-scroll="pagingLoad()" infinite-scroll-distance="40">
 				<div class="columns grid-6 fadeIn" ng-repeat="project in projects | orderBy:'-fecha'">
-					<a href="/apps/#projects/{{project.id}}">
+					<a href="/apps/#!/projects/{{project.id}}">
 						<figure class="figPortfolio">
 							<img class="imgPortfolio" ng-src="{{project.featuredImage}}" width="100%" alt="">
 							<figcaption >

@@ -141,7 +141,7 @@
 					<h1>Mis Proyectos</h1>
 				</div>
 				<div class="columns grid-4" ng-repeat="project in projects">
-					<a href="/apps/#projects/{{project.id}}">
+					<a href="/apps/#!/projects/{{project.id}}">
 						<figure class="figPortfolio">
 							<img class="imgPortfolio" ng-src="{{project.featuredImage}}" width="100%" alt="">
 							<figcaption>
@@ -160,7 +160,7 @@
 				</div>
 			</div>
 			<div class="bottomPortfolio" ng-if="projects.length == '6'">
-				<a href="/apps/#projects">Más Proyectos</a>
+				<a href="/apps/#!/projects">Más Proyectos</a>
 			</div>
 		</div>
 		<div class="contact section pages" ng-controller="ContactCtrl">
