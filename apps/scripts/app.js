@@ -3,7 +3,8 @@ var angular
 angular.module('BlogApp',[
 	'truncate',
   'infinite-scroll',
-  'viewhead'
+  'viewhead',
+  'ngDisqus'
 ])
 .config(function ($routeProvider) {
     /* rutas */
