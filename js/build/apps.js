@@ -210,7 +210,7 @@ angular.module('BlogApp')
     $scope.loadData = function() {
         $scope.responseClass = 'flaticon-loadBlog';
         
-        $http.get(urlBase + urlBlog + idEntrada + jsonP, { cache: true})
+        $http.get(urlBase + urlBlog + idEntrada, { cache: true})
         .success(function(data){
             $scope.entrada = data;
             $scope.responseClass = 'hide';
