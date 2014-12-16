@@ -100,6 +100,7 @@ $provide.value("$locale", {
 var angular
 
 angular.module('BlogApp',[
+  'ngRoute',
 	'truncate',
   'infinite-scroll',
   'viewhead',
@@ -210,7 +211,7 @@ angular.module('BlogApp')
     $scope.loadData = function() {
         $scope.responseClass = 'flaticon-loadBlog';
         
-        $http.get(urlBase + urlBlog + idEntrada, { cache: true})
+        $http.get(urlBase + urlBlog + idEntrada + jsonP, { cache: true})
         .success(function(data){
             $scope.entrada = data;
             $scope.responseClass = 'hide';

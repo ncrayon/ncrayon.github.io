@@ -1,6 +1,7 @@
 var angular
 
 angular.module('BlogApp',[
+  'ngRoute',
 	'truncate',
   'infinite-scroll',
   'viewhead',
