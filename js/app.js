@@ -164,7 +164,8 @@ app.controller('ContactCtrl', function($scope, $http, $timeout) {
         $http.get(urlBase+
           '?name='+$scope.name+
           '&mail='+$scope.mail+
-          '&msg='+$scope.msg
+          '&msg='+$scope.msg,
+           { cache: true}
           )
          .success(function(data){
             $scope.response = data;
