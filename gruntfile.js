@@ -34,7 +34,7 @@ module.exports = function(grunt){
 					'js/directives/truncate.js',
 					'js/directives/infinite-scroll.min.js',
 					'js/directives/viewhead.js',
-					'js/directives/disqus.js'
+					'js/directives/disqus.js',
 					],
 				dest: 'js/build/apps.js'
 			},

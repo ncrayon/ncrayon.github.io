@@ -105,7 +105,9 @@ angular.module('BlogApp',[
   'viewhead',
   'ngDisqus'
 ])
-.config(function ($routeProvider) {
+.config(function ($routeProvider,$disqusProvider, $locationProvider) {
+    $disqusProvider.setShortname('nelkitblog'); // Configure the disqus shortname
+    $locationProvider.hashPrefix('!'); 
     /* rutas */
     $routeProvider
       .when('/blog', {
@@ -208,7 +210,7 @@ angular.module('BlogApp')
     $scope.loadData = function() {
         $scope.responseClass = 'flaticon-loadBlog';
         
-        $http.get(urlBase + urlBlog + idEntrada, { cache: true})
+        $http.get(urlBase + urlBlog + idEntrada + jsonP, { cache: true})
         .success(function(data){
             $scope.entrada = data;
             $scope.responseClass = 'hide';
@@ -438,7 +440,7 @@ var mod;mod=angular.module("infinite-scroll",[]),mod.directive("infiniteScroll",
     var TYPE_COUNT = 'count.js'; // used for count
 
     // Placeholder for the disqus shortname
-    var shortname = 'nelkitblog';
+    var shortname;
 
     /**
      * @return {Element} dom element for script adding

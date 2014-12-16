@@ -6,7 +6,9 @@ angular.module('BlogApp',[
   'viewhead',
   'ngDisqus'
 ])
-.config(function ($routeProvider) {
+.config(function ($routeProvider,$disqusProvider, $locationProvider) {
+    $disqusProvider.setShortname('nelkitblog'); // Configure the disqus shortname
+    $locationProvider.hashPrefix('!'); 
     /* rutas */
     $routeProvider
       .when('/blog', {

@@ -17,7 +17,7 @@
     var TYPE_COUNT = 'count.js'; // used for count
 
     // Placeholder for the disqus shortname
-    var shortname = 'nelkitblog';
+    var shortname;
 
     /**
      * @return {Element} dom element for script adding

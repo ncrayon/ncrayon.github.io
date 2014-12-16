@@ -3,7 +3,7 @@
 	<div class="containerBlog">
 		<div infinite-scroll="pagingLoad()" infinite-scroll-distance="40">
 			<div ng-repeat="item in listadoEntradas | orderBy:'-date'" class="fadeIn">
-				<a ng-href="#blog/{{item.id}}">	
+				<a ng-href="#!/blog/{{item.id}}">	
 					<img class="images" ng-src="{{item.featuredImage}}" alt="">
 					<h1 class="title">{{item.title}}</h1>
 				</a>
