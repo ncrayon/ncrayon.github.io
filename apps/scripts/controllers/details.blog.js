@@ -13,13 +13,13 @@ angular.module('BlogApp')
   	var urlBase = "http://d3ka4gl7g4ooi1.herokuapp.com/api/";
   	var urlBlog = "post/";
     var jsonP = '?callback=JSON_CALLBACK';
-	  var idEntrada = $scope.id = $routeParams.id;
+	  $scope.id = $routeParams.id;
 
   	//funcion para cargar datos
     $scope.loadData = function() {
         $scope.responseClass = 'flaticon-loadBlog';
         
-        $http.get(urlBase + urlBlog + idEntrada + jsonP, { cache: true})
+        $http.get(urlBase + urlBlog + $scope.id + jsonP, { cache: true})
         .success(function(data){
             $scope.entrada = data;
             $scope.responseClass = 'hide';
