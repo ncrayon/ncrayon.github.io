@@ -6,7 +6,7 @@ var app = angular.module('PortafolioApp',[
 ]);
 
 //controllers
-app.controller('SkillCtrl', function($scope, $http) {
+app.controller('SkillCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.options = {
     width: 80,
     height: 80
@@ -140,9 +140,9 @@ app.controller('SkillCtrl', function($scope, $http) {
       ]
     },
   ];
-});
+}]);
 
-app.controller('ContactCtrl', function($scope, $http, $timeout) {
+app.controller('ContactCtrl',['$scope', '$http','$timeout', function($scope, $http, $timeout) {
     var urlBase = 'http://d3ka4gl7g4ooi1.herokuapp.com/sendmail';
     var jsonP = '&callback=JSON_CALLBACK'; 
 
@@ -205,9 +205,9 @@ app.controller('ContactCtrl', function($scope, $http, $timeout) {
         classes: 'flaticon-linkedin linkedin',
       },
     ];     
-});
+}]);
 
-app.controller('ProjectsCtrl', function($scope, $http, $timeout) {
+app.controller('ProjectsCtrl',['$scope', '$http','$timeout',function($scope, $http, $timeout) {
     var urlBase = 'http://d3ka4gl7g4ooi1.herokuapp.com/api/projects?min=0&max=6';
     var jsonP = '&callback=JSON_CALLBACK';   
 
@@ -224,7 +224,7 @@ app.controller('ProjectsCtrl', function($scope, $http, $timeout) {
         });
     };
     $scope.loadData();
-});
+}]);
 
 
 

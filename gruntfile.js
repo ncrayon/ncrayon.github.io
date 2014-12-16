@@ -13,7 +13,7 @@ module.exports = function(grunt){
 					'js/vendor/retina.min.js',
 					'js/config.js',
 					],
-				dest: 'js/dist/libraries.js'
+				dest: 'js/dist/vendor.js'
 			}, 
 			angular:{
 				src:[
@@ -21,7 +21,7 @@ module.exports = function(grunt){
 					'js/directives/truncate.js',
 					'js/directives/angular-chart.js',
 					],
-				dest: 'js/build/main.js'
+				dest: 'js/dist/main.js'
 			}, 				 
 			angularBlogAndProject:{
 				src:[
@@ -47,8 +47,12 @@ module.exports = function(grunt){
 		},
 		uglify:{
 			libraries:{
-				src: 'js/dist/libraries.js',
-				dest: 'js/build/libraries.min.js'
+				src: 'js/dist/vendor.js',
+				dest: 'js/build/vendor.min.js'
+			}, 
+			angularMain:{
+				src: 'js/dist/main.js',
+				dest: 'js/build/main.min.js'
 			}, 
 			librariesBlogAndProject:{
 				src:[
