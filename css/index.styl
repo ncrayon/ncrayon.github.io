@@ -8,8 +8,6 @@
 @import 'animate-stylus/index'
 @import 'prism'
 
-
-
 html
   height: 100%
   width: 100%
@@ -508,8 +506,10 @@ a
           margin-left 1em
           padding-left 1em  
           font-style italic
-        & strong
+        & h2,h3,h4,h5
           font-family openSansBold
+        & strong
+          font-family openSansRegular
         & a
           text-decoration none
           font-family openSansRegular
