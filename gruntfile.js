@@ -26,6 +26,7 @@ module.exports = function(grunt){
 			angularBlogAndProject:{
 				src:[
 					'js/vendor/angular-locale_es-es.js',
+					'js/vendor/angular-route.min.js',
 					'apps/scripts/app.js',
 					'apps/scripts/controllers/blog.js',
 					'apps/scripts/controllers/details.blog.js',
@@ -34,11 +35,13 @@ module.exports = function(grunt){
 					'js/directives/truncate.js',
 					'js/directives/infinite-scroll.min.js',
 					'js/directives/viewhead.js',
+					'js/directives/disqus.js'
 					],
 				dest: 'js/build/apps.js'
 			},
 			librariesBlogAndProject:{
 				src:[
+					'js/vendor/prism.min.js',
 					'js/vendor/retina.min.js',
 					'apps/scripts/config.js',
 					],
@@ -55,10 +58,7 @@ module.exports = function(grunt){
 				dest: 'js/build/main.min.js'
 			}, 
 			librariesBlogAndProject:{
-				src:[
-					'js/vendor/retina.min.js',
-					'apps/scripts/config.js',
-					],
+				src:'js/dist/lib.app.js',
 				dest: 'js/build/lib.app.min.js'
 			},
 		},

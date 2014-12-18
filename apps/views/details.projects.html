@@ -1,7 +1,7 @@
 <view-title>{{proyectos.title}} | Portafolio </view-title>
 <div class="page">
 	<ul class="breadcrumbs">
-		<li class="item"><a href="#!/projects">Todas Mis Proyectos</a></li>
+		<li class="item"><a href="#!/projects" class="flaticon-home"> Todas Mis Proyectos</a></li>
 		<li class="item">{{proyectos.title}}</li>
 	</ul>
 	<img class="images mainImage" ng-src="{{proyectos.mainImage}}" alt="">
@@ -13,8 +13,8 @@
 	<div class="paragraph descrip">
 		<h1 class="title">{{proyectos.title}}</h1>	
 		<hr>
-		<h3 class="date">{{proyectos.subtitle}}</h3>	
-		<p ng-bind-html-unsafe="proyectos.content"></p>
+		<h3 class="subtitle">{{proyectos.subtitle}}</h3>	
+		<p ng-bind-html="proyectos.content | unsafe"></p>
 	</div>
 	<h2 class="{{responseClass}}">{{response}}</h2>
 </div>

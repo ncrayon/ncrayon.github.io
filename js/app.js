@@ -203,7 +203,7 @@ app.controller('ContactCtrl',['$scope', '$http','$timeout', function($scope, $ht
       {
         link: 'https://www.linkedin.com/pub/nelkit-chavez-calona/94/53a/b05',
         classes: 'flaticon-linkedin linkedin',
-      },
+      }
     ];     
 }]);
 

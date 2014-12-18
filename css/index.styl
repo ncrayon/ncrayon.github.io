@@ -5,7 +5,8 @@
 @import 'grid'
 @import 'nib/images'
 @import 'animation'
-@import "animate-stylus/index"
+@import 'animate-stylus/index'
+@import 'prism'
 
 
 
@@ -32,11 +33,17 @@ a
   color #353535
 
 .link
-  text-decoration underline
+  text-decoration none
   font-style italic
-
-.link:hover
-  text-decoration underline
+  &:hover
+    text-decoration none
+    border-bottom 1px dotted #353535
+  
+.linkBlog
+  color #4a8dbb !important
+  text-transform uppercase
+  &:hover
+    border-bottom 1px dotted #4a8dbb !important
 
 .field
   background transparent
@@ -64,7 +71,7 @@ a
   
 .separatorBlog
   border 0px
-  border-bottom 2px solid rgba(0, 0, 0, .1)
+  border-bottom 2px dashed rgba(0, 0, 0, .1)
   margin 60px 0px 30px 0px
   
 .blogActive
@@ -73,6 +80,9 @@ a
 .projectActive
   color #ff7f79 !important
   border-bottom 1px solid #ff7f79
+
+.titleSection
+  font-size 2em
 
 #header
   display none
@@ -254,8 +264,9 @@ a
     radius(0px,0px,6px,6px)
     box-sizing(border-box)
     padding 2em 6em
-    & h1
+    & h3
       color #666
+      font-size 2em
       text-align center
       font-family openSansRegular
       font-weight normal
@@ -428,37 +439,91 @@ a
       width 80%
       margin 0px auto
       shadow(0px,0px,4px,rgba(0, 0, 0, .5))
+      & .titleBlog
+        width 100%
+        padding 1em
+        text-align center
+        color #8d8d8d
+        background #f5f5f5
+        border-bottom 1px solid #ddd
+        & h1
+          font-size 1.4em !important
+      & .contentBlog
+        width 100%
+        text-align center
+        & img
+          max-width 100%
+      & img
+        max-width 100%
       & .containerProjects
         box-sizing(border-box)
         padding 1em 8em 4em 8em
-        width 100%  
+        width 100% 
+        & .figPortfolio
+          shadow(0px,0px,2px,rgba(0, 0, 0, .15))
+          border 0px
+          &:hover
+            top:0px
+            border 2px solid #11a5c6
+            box-sizing(border-box)
+            shadow(0px,0px,0px,rgba(0, 0, 0, .15))
+        & a
+          color #232424
+          &:hover
+            text-decoration none
       & .containerBlog 
         box-sizing(border-box)
-        padding 5em 8em 4em 8em
+        text-align center
+        padding 2em 8em 4em 8em
         width 100%    
       & .mainImage
         width 100%   
       & a
         color #232424
         &:hover
-          text-decoration underline
+          border-bottom 1px dotted #232424
+          
       & .title
         font-family montserrat
+        text-transform capitalize
         line-height 1em
-        font-size 2.3em
+        font-size 1.7em
+        color #3a3a3a
       & .subtitle
-        font-family openSansRegular
+        font-family openSansLight
         font-size 1.2em   
-        color #9D9D9D
+        color #888
       & .date
-        font-family openSansRegular
-        font-size 1.2em   
+        font-family openSansLight
+        font-size 1em   
+        font-style italic
         color #888
       & .descrip
         font-family openSansLight
         font-size 1.2em  
         line-height 1.6em 
-        color #393939        
+        color #393939 
+        & blockquote
+          border-left 6px solid #bababa
+          margin-left 1em
+          padding-left 1em  
+          font-style italic
+        & strong
+          font-family openSansBold
+        & a
+          text-decoration none
+          font-family openSansRegular
+          border-bottom 1px dotted rgba(0, 0, 0, .75)   
+        & table
+          max-width 100% !important   
+          margin 0px auto
+          border 1px solid #ddd
+          & td
+            padding .3em 1em
+          & thead tr:first-child
+            background: #f5f5f5
+          & tbody tr:first-child
+            background: #f5f5f5
       & .paragraph
         display block
         width 100%
@@ -490,6 +555,8 @@ a
               content ''
           & a
             color #1c7fb2
+            &:hover
+              border-bottom 1px dashed #1c7fb2
   & .bottomMe
     width 100%
     background #efefef
@@ -511,7 +578,7 @@ a
       border-bottom 2px solid #ddd
       margin-left -21px
       radius(8px,0px,0px,8px)
-      content: "\e00a"
+      content: "\e00b"
       box-sizing(border-box)
       padding 7px
       background #efefef
@@ -644,7 +711,7 @@ a
       & .page
         width 100%
         & .containerProjects
-          padding 1em 8em
+          padding 1em 4em
         & .containerBlog
           padding 4em 6em           
         & img
@@ -693,7 +760,7 @@ a
       & .page
         width 100%
         & .containerProjects
-          padding 1em 3em
+          padding 1em 1em
         & .containerBlog
           padding 2em 3em 
         & .title

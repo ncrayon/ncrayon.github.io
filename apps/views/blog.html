@@ -1,14 +1,18 @@
 <view-title>Blog de UI/UX, Front End & Back End Developer</view-title>
 <div class="page">
+	<div class="titleBlog">
+		<h1>Blog de UI/UX, Desarrollo Movil y Desarrollo Web</h1>
+	</div>
 	<div class="containerBlog">
 		<div infinite-scroll="pagingLoad()" infinite-scroll-distance="40">
 			<div ng-repeat="item in listadoEntradas | orderBy:'-date'" class="fadeIn">
-				<a ng-href="#!/blog/{{item.id}}">	
+				<a ng-href="#!/blog/{{item.id}}">
 					<img class="images" ng-src="{{item.featuredImage}}" alt="">
-					<h1 class="title">{{item.title}}</h1>
 				</a>
-				<h3 class="date">Escrito por: {{item.author}} | {{item.date | date:'fullDate'}}</h3>
-				<p class="descrip" ng-bind-html="item.content | words:25 | unsafe"></p>
+				<h3 class="date">{{item.date | date:'fullDate'}}</h3>
+				<h3 class="title">{{item.title}}</h3>
+				<p class="descrip" ng-bind-html="item.content | words:30 | unsafe"></p>
+				<a ng-href="#!/blog/{{item.id}}" class="linkBlog">Seguir Leyendo</a>
 				<hr class="separatorBlog">
 			</div>
 			<h2 class="{{responseClass}}">{{response}}</h2>

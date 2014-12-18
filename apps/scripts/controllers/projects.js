@@ -9,7 +9,7 @@
  */
 var angular;
 angular.module('BlogApp')
-  .controller('ProjectsCtrl', function ($scope, $http) {
+  .controller('ProjectsCtrl', ['$scope', '$http',function ($scope, $http) {
   	var urlBase = "http://d3ka4gl7g4ooi1.herokuapp.com/api/";
   	var urlBlog = "projects/"
   	var jsonP = '?min=0&max=12';
@@ -42,4 +42,4 @@ angular.module('BlogApp')
       $scope.loadData(loaded,loaded+1);
 
     }
-  });
+  }]);
