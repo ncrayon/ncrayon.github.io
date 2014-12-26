@@ -160,9 +160,11 @@
 						</figure>						
 					</a>
 				</div>
-				<div class="columns grid-12">
-					<h2 class="{{responseClass}}">{{response}}</h2>
-				</div>
+				<div class="{{spinState}} sk-spinner sk-spinner-three-bounce">
+					<div class="sk-bounce1"></div>
+					<div class="sk-bounce2"></div>
+					<div class="sk-bounce3"></div>
+				</div>				
 			</div>
 			<div class="bottomPortfolio" ng-if="projects.length == '6'">
 				<a href="/apps/#!/projects">Más Proyectos</a>
@@ -188,10 +190,15 @@
 							</textarea>
 						</div>	
 						<div class="columns grid-12" >
-							<button type="submit" class="btn btnContact">Enviar</button>
+							<div class="{{spinState}} sk-spinner sk-spinner-three-bounce-white">
+						      <div class="sk-bounce1"></div>
+						      <div class="sk-bounce2"></div>
+						      <div class="sk-bounce3"></div>
+						    </div>
+							<button type="submit" class="{{btnSubmitState}} btn btnContact">Enviar</button>
 						</div>	
 						<div class="columns grid-12" >
-							<h3 class="{{responseClass}}">{{response}}</h3>
+							<h3 class="{{messageState}}">{{response}}</h3>
 						</div>		
 						<div class="columns grid-12">
 							<a ng-repeat="item in social" ng-href="{{item.link}}" target="_blank" class="socialContact {{item.classes}}"></a>

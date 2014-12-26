@@ -17,12 +17,12 @@ angular.module('BlogApp')
 
   	//funcion para cargar datos
     $scope.loadData = function() {
-        $scope.responseClass = 'flaticon-loadBlog';
+        $scope.spinState = 'show';
         
         $http.get(urlBase + urlBlog + $scope.id + jsonP, { cache: true})
         .success(function(data){
             $scope.entrada = data;
-            $scope.responseClass = 'hide';
+            $scope.spinState = 'hide';
         })
         .error(function (data, status) {
           if (status === 401) {

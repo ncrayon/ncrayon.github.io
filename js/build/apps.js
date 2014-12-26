@@ -1062,14 +1062,14 @@ angular.module('BlogApp')
 
   	//funcion para cargar datos
     $scope.loadData = function(min,max) {
-        $scope.responseClass = 'flaticon-loadBlog';
+        $scope.spinState = 'show';
 
         $http.get(urlBase + urlBlog + '?min='+min+'&max='+max, { cache: true})
         .success(function(data){
             if(data.length === 1){
               $scope.listadoEntradas.push(data[0])
             }
-            $scope.responseClass = 'hide';
+            $scope.spinState = 'hide';
         })
         .error(function (data, status) {
           if (status === 401) {
@@ -1104,12 +1104,12 @@ angular.module('BlogApp')
 
   	//funcion para cargar datos
     $scope.loadData = function() {
-        $scope.responseClass = 'flaticon-loadBlog';
+        $scope.spinState = 'show';
         
         $http.get(urlBase + urlBlog + $scope.id + jsonP, { cache: true})
         .success(function(data){
             $scope.entrada = data;
-            $scope.responseClass = 'hide';
+            $scope.spinState = 'hide';
         })
         .error(function (data, status) {
           if (status === 401) {
@@ -1141,14 +1141,14 @@ angular.module('BlogApp')
 
   	//funcion para cargar datos
     $scope.loadData = function(min,max) {
-        $scope.responseClass = 'flaticon-loadBlog';
+        $scope.spinState = 'show';
 
         $http.get(urlBase + urlBlog + '?min='+min+'&max='+max, { cache: true})
         .success(function(data){
             if(data.length === 1){
               $scope.projects.push(data[0])
             }
-            $scope.responseClass = 'hide';
+            $scope.spinState = 'hide';
         })
         .error(function (data, status) {
           if (status === 401) {
@@ -1183,12 +1183,12 @@ angular.module('BlogApp')
 
   	//funcion para cargar datos
     $scope.loadData = function() {
-        $scope.responseClass = 'flaticon-loadBlog';
+        $scope.spinState = 'show';
         
         $http.get(urlBase + urlBlog + idEntrada, { cache: true})
         .success(function(data){
             $scope.proyectos = data;
-            $scope.responseClass = 'hide';
+            $scope.spinState = 'hide';
         })
         .error(function (data, status) {
           if (status === 401) {

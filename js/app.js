@@ -151,16 +151,18 @@ app.controller('ContactCtrl',['$scope', '$http','$timeout', function($scope, $ht
     $scope.msg = '';
 
     $scope.sendmail = function() {
-      $scope.responseClass = 'flaticon-load';
       $scope.response = '';
 
       if($scope.name==='' || $scope.mail==='' || $scope.msg===''){
+        $scope.messageState = 'show';
         $scope.response = 'No Deje Campos en Blanco, Por Favor';
-        $scope.responseClass = 'warning';
+        $scope.messageState = 'warning';
         $timeout(function(){ 
-          $scope.responseClass = 'hide';
+          $scope.messageState = 'hide';
         }, 4000);
       }else{
+        $scope.spinState = 'show';
+        $scope.btnSubmitState = 'hide';
         $http.get(urlBase+
           '?name='+$scope.name+
           '&mail='+$scope.mail+
@@ -169,12 +171,14 @@ app.controller('ContactCtrl',['$scope', '$http','$timeout', function($scope, $ht
           )
          .success(function(data){
             $scope.response = data;
-            $scope.responseClass = 'success';
+            $scope.spinState = 'hide';
+            $scope.btnSubmitState = 'show';
+            $scope.messageState = 'success';
             $scope.name = '';
             $scope.mail = '';
             $scope.msg = '';
             $timeout(function(){ 
-              $scope.responseClass = 'hide';
+              $scope.messageState = 'hide';
             }, 4000);
         })
         .error(function (data, status) {
@@ -213,11 +217,11 @@ app.controller('ProjectsCtrl',['$scope', '$http','$timeout',function($scope, $ht
 
     //funcion para cargar datos
     $scope.loadData = function() {
-        $scope.responseClass = 'flaticon-loadBlog';
+        $scope.spinState = 'show';
        
         $http.get(urlBase,{ cache: true}).success(function(data){
             $scope.projects = data;
-            $scope.responseClass = 'hide';
+            $scope.spinState = 'hide';
         })
         .error(function (data, status) {
           console.log(status);

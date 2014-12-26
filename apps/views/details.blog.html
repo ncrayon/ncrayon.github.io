@@ -11,9 +11,14 @@
 			<h2 class="date">{{entrada.date | date:'fullDate'}}</h2>
 		</div>
 		<p class="descrip" ng-bind-html="entrada.content | unsafe"></p>
-
+		<div class="contentLoad">
+			<div class="{{spinState}} sk-spinner sk-spinner-three-bounce">
+				<div class="sk-bounce1"></div>
+				<div class="sk-bounce2"></div>
+				<div class="sk-bounce3"></div>
+			</div>
+		</div>
 	</div>
-	<h2 class="{{responseClass}}">{{response}}</h2>
     <div disqus="id"></div>
 </div>
 
