@@ -11,7 +11,7 @@
 				</a>
 				<h3 class="date">{{item.date | date:'fullDate'}}</h3>
 				<h3 class="title">{{item.title}}</h3>
-				<p class="descrip" ng-bind-html="item.content | words:30 | unsafe"></p>
+				<p class="descrip" ng-bind-html="item.content | words:20 | unsafe"></p>
 				<a ng-href="#!/blog/{{item.id}}" class="linkBlog">Seguir Leyendo</a>
 				<hr class="separatorBlog">
 			</div>

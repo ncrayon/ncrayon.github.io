@@ -1,0 +1,1554 @@
+@import "colors"
+@import "fonts"
+@import "normalize"
+@import "mixins"
+@import "grid"
+@import "controls"
+@import "modal"
+
+altoBarras = 7%
+distantciaBarras = 240%
+maxWidthBody =   1148px
+shadowDefault = 0,0,2px,rgba(0, 0, 0, .2)
+
+body
+	background bg-color
+	font-size 12px
+	overflow-x hidden
+	font-family 'lato-regular'
+@media screen and (max-width:900px)
+	body
+		background bg-color
+		font-size 11px
+@media screen and (max-width:800px)
+	body
+		background bg-color
+		font-size 10px
+@media screen and (max-width:500px)
+	body
+		background bg-color
+		font-size 9px
+.inline
+	display inline-block
+
+footer
+	font-family 'lato-light'
+	font-size 1.4em
+	color #666
+	background white
+	border-top 1px solid border-color
+	padding 20px
+	text-align center
+a 
+	text-decoration none
+
+.wrapper-social 
+	font-size 2.3em
+	margin-bottom 5px
+	& a 
+		color #666
+		margin-left 14px
+		text-decoration none
+	& .twitter:hover
+		color twitter
+	& .facebook:hover
+		color facebook
+	& .gplus:hover
+		color gplus
+	& .youtube:hover
+		color youtube
+
+.ad
+	text-align center
+	background gray-ad
+	padding 14px
+	box-sizing(border-box)
+	position: relative
+	& *
+		display inline-block
+		max-width 800px
+		width 100%
+	&:before
+		content 'Anuncio'
+		font-size 10px
+		top 2px
+		left 50%
+		position absolute
+		color color-lyrics-dark
+.ad-white
+	text-align center
+	background rgba(255, 255, 255, .19)
+	padding 14px
+	box-sizing(border-box)
+	position: relative
+	& *
+		display inline-block
+		max-width 800px
+		width 100%
+	&:before
+		content 'Anuncio'
+		font-size 10px
+		top 2px
+		left 50%
+		position absolute
+		color color-lyrics	
+/*
+	Estilo de la barra superior de la pagina web
+*/
+.top-bar
+	background white
+	height 56px
+	display block
+	border-bottom 1px solid border-color
+	width 100%
+	position fixed 
+	z-index 3000
+	top 0px
+	& .wrapper
+		white-space nowrap
+		position: relative
+		max-width maxWidthBody
+		box-sizing(border-box)
+		height 56px
+		padding 0px 13px
+		margin 0px auto
+		border-left 1px solid border-color
+		border-right 1px solid border-color
+		& .logo 
+			background url('../images/apple5x1-logo.jpg')
+			background-size 100% 100%
+			display inline-block
+			vertical-align top
+			margin 8px 0px
+			padding 0px
+			font-size 0px
+			width 161px
+			height 37px
+		& .menu 
+			display inline-block
+			vertical-align top
+			margin 0px 0px
+			& ul
+				padding 0px
+				margin 0px
+				list-style none
+				& li 
+					cursor pointer
+					display inline-block
+					margin 0px 10px
+					height 56px
+					line-height 56px
+					& a 
+						display block
+						color blue5x1-color
+						text-decoration none
+						 text-transform uppercase
+		& .button
+			position absolute
+			background white
+			width 56px
+			height 56px
+			display inline-block
+			border-left 1px solid border-color
+			text-align center
+			font-size 2em
+			line-height 56px
+			&:hover
+				background blue5x1-color
+				color white
+				cursor pointer
+		& .button-search 
+			right: 0px
+		& .button-profile 
+			right: 56px
+		& .button-menu 
+			display none
+			right: 0px
+			text-align left
+			&:hover
+				& .menu-lines
+					background white
+					&:before
+						background white
+					&:after
+						background white
+			&:hover
+				& .menu-x
+					&:before
+						background white
+					&:after
+						background white
+									
+			& .menu-lines
+				position: relative
+				top 40%
+				display block
+				width 60%
+				margin 3px auto
+				height altoBarras
+				background black
+				-webkit-transition all .3s ease
+				transition all .3s ease
+				&:before
+					content ''
+					position absolute
+					top (distantciaBarras)*(-1)
+					height 100%
+					width 100%
+					background black
+					-webkit-transition all .3s ease
+					transition all .3s ease
+				&:after
+					content ''
+					position absolute
+					top distantciaBarras
+					height 100%
+					width 100%
+					background black
+					-webkit-transition all .3s ease
+					transition all .3s ease
+					
+			& .menu-x
+				position: relative
+				top 40%
+				display block
+				width 60%
+				margin 3px auto
+				height altoBarras
+				&:before
+					content ''
+					position absolute
+					top 0px
+					height 100%
+					width 100%
+					background black
+					-webkit-transform rotate(43deg)
+					transform rotate(43deg)
+					transition all .3s ease
+					-webkit-transition all .3s ease
+				&:after
+					content ''
+					position absolute
+					top 0px
+					height 100%
+					width 100%
+					background black
+					-webkit-transform rotate(-43deg)
+					transform rotate(-43deg)
+					transition all .3s ease
+					-webkit-transition all .3s ease
+
+@media screen and (max-width:890px)
+	.top-bar .wrapper .button-search
+		display none
+		position absolute
+		top 57px
+		z-index 301
+			
+	.top-bar .wrapper .button-profile
+		display none
+		position absolute
+		top 57px
+		z-index 301
+
+	.top-bar .wrapper .button-menu 
+		display inline-block
+
+	.top-bar .wrapper .oculto
+		right 5000px !important
+		transition all .3s ease
+		-webkit-transition all .3s ease
+	.top-bar .wrapper .visible
+		right 0px !important
+		transition all .3s ease
+		-webkit-transition all .3s ease
+	.top-bar .wrapper .menu 
+		background white
+		border 1px solid border-color
+		vertical-align top
+		padding-top 56px
+		margin 56px 0px
+		position absolute
+		z-index 300
+		right 0px
+		& ul
+			& li 
+				font-size 1.5em
+				display block
+				margin 0px
+				padding 0px 20px
+				height 45px
+				line-height 45px
+				text-align center
+				border-top 1px solid border-color
+				&:hover
+					background blue5x1-color
+					& a 
+						color white
+
+@media screen and (max-width:490px)
+	.top-bar .wrapper .menu 
+		background white
+		border 1px solid border-color
+		vertical-align top
+		width 100%
+		position absolute
+		right 0px
+
+/*
+	Termina estilo de la barra superior de la pagina web
+*/
+
+/*
+	Comienza estilo del cuerpo de la web
+*/
+
+.container-body
+	max-width maxWidthBody
+	margin 71px auto 20px auto
+	padding 0px
+	box-sizing(border-box)
+
+/*
+	Termina estilo del cuerpo de la web
+*/
+
+/*
+	Comienza estilo de los articulos principales
+*/
+
+	& .wrapper-main-articles
+		margin 15px auto
+		height 387px
+		background-size: 100%		
+		background-color: #a53179	
+		background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==')
+		background-image: -webkit-gradient(linear,0 0,100% 100%,color-stop(0,#a53179),color-stop(40%,#391f60),color-stop(57%,#422e60),color-stop(84%,#9e568d))
+		background-image: -webkit-linear-gradient(left top,#a53179 0,#391f60 40%,#422e60 57%,#9e568d 84%)
+		background-image: -moz-linear-gradient(left top,#a53179 0,#391f60 40%,#422e60 57%,#9e568d 84%)
+		background-image: -o-linear-gradient(left top,#a53179 0,#391f60 40%,#422e60 57%,#9e568d 84%)
+		background-image: linear-gradient(left top,#a53179 0,#391f60 40%,#422e60 57%,#9e568d 84%)
+
+		background: rgb(127,162,181)
+		background: -moz-linear-gradient(top,  rgba(127,162,181,1) 0%, rgba(130,163,182,1) 1%, rgba(132,161,179,1) 4%, rgba(132,160,174,1) 6%, rgba(136,158,171,1) 12%, rgba(135,157,168,1) 12%, rgba(139,157,169,1) 14%, rgba(138,155,163,1) 17%, rgba(141,155,164,1) 17%, rgba(144,153,160,1) 22%, rgba(143,152,157,1) 22%, rgba(146,149,154,1) 25%, rgba(147,151,154,1) 26%, rgba(155,144,142,1) 34%, rgba(154,143,139,1) 35%, rgba(159,141,137,1) 37%, rgba(158,139,133,1) 39%, rgba(161,140,135,1) 39%, rgba(159,139,132,1) 40%, rgba(164,134,126,1) 45%, rgba(167,134,125,1) 45%, rgba(166,132,122,1) 47%, rgba(169,132,123,1) 48%, rgba(168,132,120,1) 48%, rgba(172,128,117,1) 52%, rgba(171,127,114,1) 52%, rgba(177,124,110,1) 57%, rgba(176,123,107,1) 58%, rgba(179,121,107,1) 59%, rgba(180,117,100,1) 63%, rgba(183,118,100,1) 64%, rgba(186,107,90,1) 71%, rgba(189,106,88,1) 74%, rgba(189,104,84,1) 75%, rgba(193,98,80,1) 81%, rgba(193,96,77,1) 81%, rgba(192,95,78,1) 82%, rgba(195,96,77,1) 83%, rgba(193,92,74,1) 85%, rgba(197,86,69,1) 91%, rgba(197,82,64,1) 94%, rgba(198,82,67,1) 94%, rgba(198,81,64,1) 95%, rgba(198,80,66,1) 96%, rgba(197,80,63,1) 96%, rgba(199,79,65,1) 96%, rgba(198,76,61,1) 98%, rgba(199,77,64,1) 99%, rgba(198,74,62,1) 100%)
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(127,162,181,1)), color-stop(1%,rgba(130,163,182,1)), color-stop(4%,rgba(132,161,179,1)), color-stop(6%,rgba(132,160,174,1)), color-stop(12%,rgba(136,158,171,1)), color-stop(12%,rgba(135,157,168,1)), color-stop(14%,rgba(139,157,169,1)), color-stop(17%,rgba(138,155,163,1)), color-stop(17%,rgba(141,155,164,1)), color-stop(22%,rgba(144,153,160,1)), color-stop(22%,rgba(143,152,157,1)), color-stop(25%,rgba(146,149,154,1)), color-stop(26%,rgba(147,151,154,1)), color-stop(34%,rgba(155,144,142,1)), color-stop(35%,rgba(154,143,139,1)), color-stop(37%,rgba(159,141,137,1)), color-stop(39%,rgba(158,139,133,1)), color-stop(39%,rgba(161,140,135,1)), color-stop(40%,rgba(159,139,132,1)), color-stop(45%,rgba(164,134,126,1)), color-stop(45%,rgba(167,134,125,1)), color-stop(47%,rgba(166,132,122,1)), color-stop(48%,rgba(169,132,123,1)), color-stop(48%,rgba(168,132,120,1)), color-stop(52%,rgba(172,128,117,1)), color-stop(52%,rgba(171,127,114,1)), color-stop(57%,rgba(177,124,110,1)), color-stop(58%,rgba(176,123,107,1)), color-stop(59%,rgba(179,121,107,1)), color-stop(63%,rgba(180,117,100,1)), color-stop(64%,rgba(183,118,100,1)), color-stop(71%,rgba(186,107,90,1)), color-stop(74%,rgba(189,106,88,1)), color-stop(75%,rgba(189,104,84,1)), color-stop(81%,rgba(193,98,80,1)), color-stop(81%,rgba(193,96,77,1)), color-stop(82%,rgba(192,95,78,1)), color-stop(83%,rgba(195,96,77,1)), color-stop(85%,rgba(193,92,74,1)), color-stop(91%,rgba(197,86,69,1)), color-stop(94%,rgba(197,82,64,1)), color-stop(94%,rgba(198,82,67,1)), color-stop(95%,rgba(198,81,64,1)), color-stop(96%,rgba(198,80,66,1)), color-stop(96%,rgba(197,80,63,1)), color-stop(96%,rgba(199,79,65,1)), color-stop(98%,rgba(198,76,61,1)), color-stop(99%,rgba(199,77,64,1)), color-stop(100%,rgba(198,74,62,1)))
+		background: -webkit-linear-gradient(top,  rgba(127,162,181,1) 0%,rgba(130,163,182,1) 1%,rgba(132,161,179,1) 4%,rgba(132,160,174,1) 6%,rgba(136,158,171,1) 12%,rgba(135,157,168,1) 12%,rgba(139,157,169,1) 14%,rgba(138,155,163,1) 17%,rgba(141,155,164,1) 17%,rgba(144,153,160,1) 22%,rgba(143,152,157,1) 22%,rgba(146,149,154,1) 25%,rgba(147,151,154,1) 26%,rgba(155,144,142,1) 34%,rgba(154,143,139,1) 35%,rgba(159,141,137,1) 37%,rgba(158,139,133,1) 39%,rgba(161,140,135,1) 39%,rgba(159,139,132,1) 40%,rgba(164,134,126,1) 45%,rgba(167,134,125,1) 45%,rgba(166,132,122,1) 47%,rgba(169,132,123,1) 48%,rgba(168,132,120,1) 48%,rgba(172,128,117,1) 52%,rgba(171,127,114,1) 52%,rgba(177,124,110,1) 57%,rgba(176,123,107,1) 58%,rgba(179,121,107,1) 59%,rgba(180,117,100,1) 63%,rgba(183,118,100,1) 64%,rgba(186,107,90,1) 71%,rgba(189,106,88,1) 74%,rgba(189,104,84,1) 75%,rgba(193,98,80,1) 81%,rgba(193,96,77,1) 81%,rgba(192,95,78,1) 82%,rgba(195,96,77,1) 83%,rgba(193,92,74,1) 85%,rgba(197,86,69,1) 91%,rgba(197,82,64,1) 94%,rgba(198,82,67,1) 94%,rgba(198,81,64,1) 95%,rgba(198,80,66,1) 96%,rgba(197,80,63,1) 96%,rgba(199,79,65,1) 96%,rgba(198,76,61,1) 98%,rgba(199,77,64,1) 99%,rgba(198,74,62,1) 100%)
+		background: -o-linear-gradient(top,  rgba(127,162,181,1) 0%,rgba(130,163,182,1) 1%,rgba(132,161,179,1) 4%,rgba(132,160,174,1) 6%,rgba(136,158,171,1) 12%,rgba(135,157,168,1) 12%,rgba(139,157,169,1) 14%,rgba(138,155,163,1) 17%,rgba(141,155,164,1) 17%,rgba(144,153,160,1) 22%,rgba(143,152,157,1) 22%,rgba(146,149,154,1) 25%,rgba(147,151,154,1) 26%,rgba(155,144,142,1) 34%,rgba(154,143,139,1) 35%,rgba(159,141,137,1) 37%,rgba(158,139,133,1) 39%,rgba(161,140,135,1) 39%,rgba(159,139,132,1) 40%,rgba(164,134,126,1) 45%,rgba(167,134,125,1) 45%,rgba(166,132,122,1) 47%,rgba(169,132,123,1) 48%,rgba(168,132,120,1) 48%,rgba(172,128,117,1) 52%,rgba(171,127,114,1) 52%,rgba(177,124,110,1) 57%,rgba(176,123,107,1) 58%,rgba(179,121,107,1) 59%,rgba(180,117,100,1) 63%,rgba(183,118,100,1) 64%,rgba(186,107,90,1) 71%,rgba(189,106,88,1) 74%,rgba(189,104,84,1) 75%,rgba(193,98,80,1) 81%,rgba(193,96,77,1) 81%,rgba(192,95,78,1) 82%,rgba(195,96,77,1) 83%,rgba(193,92,74,1) 85%,rgba(197,86,69,1) 91%,rgba(197,82,64,1) 94%,rgba(198,82,67,1) 94%,rgba(198,81,64,1) 95%,rgba(198,80,66,1) 96%,rgba(197,80,63,1) 96%,rgba(199,79,65,1) 96%,rgba(198,76,61,1) 98%,rgba(199,77,64,1) 99%,rgba(198,74,62,1) 100%)
+		background: -ms-linear-gradient(top,  rgba(127,162,181,1) 0%,rgba(130,163,182,1) 1%,rgba(132,161,179,1) 4%,rgba(132,160,174,1) 6%,rgba(136,158,171,1) 12%,rgba(135,157,168,1) 12%,rgba(139,157,169,1) 14%,rgba(138,155,163,1) 17%,rgba(141,155,164,1) 17%,rgba(144,153,160,1) 22%,rgba(143,152,157,1) 22%,rgba(146,149,154,1) 25%,rgba(147,151,154,1) 26%,rgba(155,144,142,1) 34%,rgba(154,143,139,1) 35%,rgba(159,141,137,1) 37%,rgba(158,139,133,1) 39%,rgba(161,140,135,1) 39%,rgba(159,139,132,1) 40%,rgba(164,134,126,1) 45%,rgba(167,134,125,1) 45%,rgba(166,132,122,1) 47%,rgba(169,132,123,1) 48%,rgba(168,132,120,1) 48%,rgba(172,128,117,1) 52%,rgba(171,127,114,1) 52%,rgba(177,124,110,1) 57%,rgba(176,123,107,1) 58%,rgba(179,121,107,1) 59%,rgba(180,117,100,1) 63%,rgba(183,118,100,1) 64%,rgba(186,107,90,1) 71%,rgba(189,106,88,1) 74%,rgba(189,104,84,1) 75%,rgba(193,98,80,1) 81%,rgba(193,96,77,1) 81%,rgba(192,95,78,1) 82%,rgba(195,96,77,1) 83%,rgba(193,92,74,1) 85%,rgba(197,86,69,1) 91%,rgba(197,82,64,1) 94%,rgba(198,82,67,1) 94%,rgba(198,81,64,1) 95%,rgba(198,80,66,1) 96%,rgba(197,80,63,1) 96%,rgba(199,79,65,1) 96%,rgba(198,76,61,1) 98%,rgba(199,77,64,1) 99%,rgba(198,74,62,1) 100%)
+		background: linear-gradient(to bottom,  rgba(127,162,181,1) 0%,rgba(130,163,182,1) 1%,rgba(132,161,179,1) 4%,rgba(132,160,174,1) 6%,rgba(136,158,171,1) 12%,rgba(135,157,168,1) 12%,rgba(139,157,169,1) 14%,rgba(138,155,163,1) 17%,rgba(141,155,164,1) 17%,rgba(144,153,160,1) 22%,rgba(143,152,157,1) 22%,rgba(146,149,154,1) 25%,rgba(147,151,154,1) 26%,rgba(155,144,142,1) 34%,rgba(154,143,139,1) 35%,rgba(159,141,137,1) 37%,rgba(158,139,133,1) 39%,rgba(161,140,135,1) 39%,rgba(159,139,132,1) 40%,rgba(164,134,126,1) 45%,rgba(167,134,125,1) 45%,rgba(166,132,122,1) 47%,rgba(169,132,123,1) 48%,rgba(168,132,120,1) 48%,rgba(172,128,117,1) 52%,rgba(171,127,114,1) 52%,rgba(177,124,110,1) 57%,rgba(176,123,107,1) 58%,rgba(179,121,107,1) 59%,rgba(180,117,100,1) 63%,rgba(183,118,100,1) 64%,rgba(186,107,90,1) 71%,rgba(189,106,88,1) 74%,rgba(189,104,84,1) 75%,rgba(193,98,80,1) 81%,rgba(193,96,77,1) 81%,rgba(192,95,78,1) 82%,rgba(195,96,77,1) 83%,rgba(193,92,74,1) 85%,rgba(197,86,69,1) 91%,rgba(197,82,64,1) 94%,rgba(198,82,67,1) 94%,rgba(198,81,64,1) 95%,rgba(198,80,66,1) 96%,rgba(197,80,63,1) 96%,rgba(199,79,65,1) 96%,rgba(198,76,61,1) 98%,rgba(199,77,64,1) 99%,rgba(198,74,62,1) 100%)
+
+		& .article-main:nth-child(1)
+			height 100%
+			& img
+				opacity .3 
+				width auto
+			& .container-title
+				& .title
+					font-size 2em
+					line-height 0px
+					line-height: 1.2
+				& .date 
+					font-size 1.3em
+		& .article-main
+			text-align center
+			position relative
+			box-sizing(border-box)
+			display block
+			overflow hidden
+			border 1px solid rgba(255, 255, 255, .4)
+			width 33.33%
+			float left
+			height 50%
+			&:hover 
+				& .container-title
+					& .title
+						transition(all,.3s)
+						font-family 'lato-regular'
+						color white
+						text-shadow 0px 2px 24px rgba(0, 0, 0, .75)
+						//color #ff0052
+					& .date
+						transition(all,.3s)
+						color white
+						text-shadow 0px 2px 24px rgba(0, 0, 0, .75)
+						//color #ff0052
+				& img
+					transition(all,.3s)
+					opacity .05
+			& img
+				opacity .3 
+				width 100%
+			& .container-title
+				text-decoration none
+				position absolute
+				bottom 0px
+				left 0px
+				box-sizing(border-box)
+				width 100%
+				text-align left
+				padding 10px
+				color white
+				display block
+				& .title
+					font-family 'lato-regular'
+					font-size 1.7em
+					letter-spacing .1em
+					margin 0
+					padding 0
+					line-height: 1.2
+				& .date 
+					letter-spacing .1em
+					font-family 'lato-light'
+					font-size 1em
+				
+			& .container-share
+				position absolute 
+				width 100%
+				top 0px
+				left 0px
+				text-align right
+				box-sizing(border-box)
+				padding 4px 10px
+				& .icon
+					color white
+					text-decoration none
+					font-size 2em
+
+@media screen and (max-width:830px)
+	.container-body
+		& .wrapper-main-articles
+			& .article-main:nth-child(1)
+				& img
+					width auto 
+					height auto
+				& .container-title
+					& .title
+						max-height 300px
+						overflow hidden
+			& .article-main
+				& img
+					width auto 
+					height 100%
+				& .container-title
+					& .title
+						max-height 100px
+						overflow hidden
+
+@media screen and (max-width:500px)
+	.container-body
+		& .wrapper-main-articles
+			height 700px
+			background-size cover
+			& .article-main:nth-child(1)
+				height 200px
+				& img
+					width auto 
+					height auto
+				& .container-title
+					& .title
+						margin-bottom 5px
+						line-height 1.2
+						max-height 110px
+						overflow hidden
+			& .article-main
+				width 100%
+				height 125px
+				& img
+					width 100% 
+					height auto
+				& .container-title
+					& .title
+						margin-bottom 5px
+						line-height 1.2
+
+
+/*
+	Termina estilo de los articulos principales
+*/
+
+/*
+	Comienza estilo de los articulos secundarios
+*/
+
+.container-secondary-articles, .container-trending
+	padding 0px 5px
+	margin 0px
+	overflow hidden
+	& .article-secondary, .articles-trending
+		display inline-block
+		text-decoration none
+		border 1px solid border-color
+		border-bottom 3px solid border-color
+		margin-bottom 15px
+		width 100%
+		background white
+		height 159px
+		transition(box-shadow, .3s)
+		&:hover
+			transition(box-shadow, .3s)
+			shadow( 0, 1px, 8px, #5c6b82)
+			border-bottom 0px solid border-color
+		& .image-container
+			display inline-block
+			vertical-align top
+			height 100%
+			background border-color
+			width 30%
+			overflow hidden
+		& .descrip-container
+			overflow hidden
+			position relative
+			box-sizing(border-box)
+			padding 19px
+			display inline-block
+			vertical-align top
+			height 100%
+			width 69%
+			& .category-container
+				width 100%
+				height 15px
+				position absolute
+				top 0px
+				right 0px
+				padding 0px
+				& ul
+					list-style: none
+					padding 0px
+					margin 0px
+					& li 
+						margin 0px 0px
+						padding 3px 10px
+						float right
+						color white
+			& .date
+				font-size 1.2em
+				color color-lyrics
+				font-family 'lato-light'
+			& .title 
+				font-size 1.5em
+				color blue5x1-color
+				line-height 1.3
+				font-family 'lato-regular'
+				margin 0px 
+				padding 0px
+			& .overview
+				font-size 1.2em
+				text-align justify
+				color color-lyrics
+				line-height 1.4
+				margin 2px 0px 
+				padding 0px
+				font-family 'lato-light'
+			& .bar-bottom
+				height 40px
+				line-height 40px
+				width 100%
+				overflow hidden
+				display block
+				background white
+				position absolute
+				left 0px
+				padding 0px 19px 
+				box-sizing(border-box)
+				shadow(0px,-10px,10px, white)
+				bottom 0px
+				& .author-img
+					display inline-block
+					vertical-align middle
+					width 33px
+					height 33px
+					radius(50%,50%,50%,50%)
+				& .author-info
+					display inline-block
+					vertical-align middle
+					& span
+						color color-lyrics
+						display block
+						line-height 1
+						margin 0px
+						padding 0px
+					& .author-name
+						color blue5x1-color
+				& .share
+					background none
+					border 0px
+					position absolute 
+					right 0px
+					font-size 1.5em
+					color color-lyrics
+	
+.aside-secondary-articles, .aside-articles
+	box-sizing(border-box)
+	padding 0px 0px 0px 15px
+	& .item-aside
+		margin-bottom 15px
+
+.play-podcast
+	width 100%
+	height 57px
+	background black-podcast
+	padding 1px 
+	box-sizing(border-box)
+	overflow hidden
+	white-space nowrap
+	transition(all,.3s)
+	&:hover
+		height 80px
+	& .ilustracion
+		display inline-block
+		vertical-align middle
+		height 55px
+		width 55px
+		background url('../images/logo-square.png')
+		background-size cover
+	& .button-play, .button-forward, .button-volume
+		vertical-align middle
+		color white
+		font-size 2em
+		text-align center
+		line-height 55px
+		shadow(0px,0px,3px, black)
+		background black-podcast
+		display inline-block
+		height 55px
+		width 55px
+		&:hover 
+			shadow(0px,0px,20px, black)
+			cursor pointer
+	& .description
+		color white
+		font-size 1.4em
+		display inline-block
+		vertical-align middle
+		width 90%
+	& .more
+		position relative
+		z-index 2
+		display block
+		text-decoration none
+		width 100%
+		color white
+		font-size 1.2em
+		text-align center
+		box-sizing(border-box)
+		shadow(inset 0px,0px,3px, black)
+		background #232323
+		height 23px 
+		line-height 23px
+		&:hover
+			border-top 1px solid black
+			background blue5x1-color	
+			shadow(inset 0px,0px,0px, black)
+	& .close-podcast
+		right 10px
+		top -25px
+		position absolute
+		color white
+		text-decoration none
+		background black-podcast
+		height 30px
+		width 30px
+		font-size 20px
+		text-align center
+		line-height 30px
+		radius(5px, 5px, 0px,0px)
+
+@media screen and (max-width:830px)
+	.aside-secondary-articles
+		box-sizing(border-box)
+		padding 0px 15px
+		text-align center
+		& .item-aside
+			margin-bottom 15px
+
+		& .item-aside:nth-child(2)
+			margin-bottom 15px
+			width 48%
+			display inline-block
+			vertical-align middle
+		& .item-aside:nth-child(3)
+			margin-left 10px
+			margin-bottom 15px
+			width 48%
+			display inline-block
+			vertical-align middle
+	
+	.aside-articles
+		box-sizing(border-box)
+		padding 0px 15px
+		text-align left !important
+		& .item-aside
+			margin-bottom 15px
+		
+		& .item-aside:nth-child(1)
+			margin-top 15px
+
+		& .item-aside:nth-child(2)
+			display none
+		& .item-aside:nth-child(3)
+			margin-left 0px
+			margin-bottom 15px
+			width 100%
+			display inline-block
+			vertical-align middle
+			
+	.container-secondary-articles, .container-trending
+		padding 0px
+		& .article-secondary, .articles-trending
+			margin-bottom 8px
+
+@media screen and (max-width:500px)
+	.aside-secondary-articles, .aside-articles
+		box-sizing(border-box)
+		padding 0px 15px
+		text-align center
+		& .item-aside
+			margin-bottom 15px
+
+		& .item-aside:nth-child(2)
+			display none
+			margin-bottom 15px
+			width auto
+			vertical-align middle
+		& .item-aside:nth-child(3)
+			margin-left 0px
+			margin-bottom 15px
+			width auto
+			display block
+			vertical-align top
+/*
+ Termina estilo de los articulos secundarios
+*/
+
+/*
+ comienza el estilo de los articulos cargados por ajax
+*/
+
+.container-loaded-articles, .container-type-feed, .modal-search-wrapper, .container-articles
+	padding 2px
+	margin 0px
+	text-align center
+	& .article-loaded:nth-child(even)
+		margin-right 0px
+	& .article-loaded
+		text-align left !important
+		width 49%
+		display inline-block
+		text-decoration none
+		border 1px solid border-color
+		border-bottom 3px solid border-color
+		margin-bottom 15px
+		margin-right 1%
+		background white
+		box-sizing(border-box)
+		height 159px
+		transition(box-shadow, .3s)
+		&:hover
+			transition(box-shadow, .3s)
+			shadow( 0, 1px, 8px, #5c6b82)
+			border-bottom 0px solid border-color
+		& .image-container
+			display inline-block
+			vertical-align top
+			height 100%
+			background border-color
+			width 30%
+			overflow hidden
+		& .descrip-container
+			overflow hidden
+			position relative
+			box-sizing(border-box)
+			padding 19px
+			display inline-block
+			vertical-align top
+			height 100%
+			width 69%
+			& .category-container
+				width 100%
+				height 15px
+				position absolute
+				top 0px
+				right 0px
+				padding 0px
+				& ul
+					list-style: none
+					padding 0px
+					margin 0px
+					& li 
+						margin 0px 0px
+						padding 3px 10px
+						float right
+						color white
+			& .date
+				font-size 1.2em
+				color color-lyrics
+				font-family 'lato-light'
+			& .title 
+				font-size 1.5em
+				color blue5x1-color
+				line-height 1.3
+				font-family 'lato-regular'
+				margin 0px 
+				padding 0px
+			& .overview
+				font-size 1.2em
+				text-align justify
+				color color-lyrics
+				line-height 1.4
+				margin 2px 0px 
+				padding 0px
+				font-family 'lato-light'
+			& .bar-bottom
+				height 40px
+				line-height 40px
+				width 100%
+				overflow hidden
+				display block
+				background white
+				position absolute
+				left 0px
+				padding 0px 19px 
+				box-sizing(border-box)
+				shadow(0px,-10px,10px, white)
+				bottom 0px
+				& .author-img
+					display inline-block
+					vertical-align middle
+					width 33px
+					height 33px
+					radius(50%,50%,50%,50%)
+				& .author-info
+					display inline-block
+					vertical-align middle
+					& span
+						color color-lyrics
+						display block
+						line-height 1
+						margin 0px
+						padding 0px
+					& .author-name
+						color blue5x1-color
+				& .share
+					background none
+					border 0px
+					position absolute 
+					right 0px
+					font-size 1.5em
+					color color-lyrics
+
+@media screen and (max-width:830px)
+	.container-loaded-articles, .container-type-feed, .modal-search-wrapper, .container-articles
+		padding 0px
+		margin 0px
+		text-align left
+		& .article-loaded:nth-child(even)
+			margin-right 0px
+		& .article-loaded
+			text-align left !important
+			width 100%
+			display inline-block
+			text-decoration none
+			border 1px solid border-color
+			border-bottom 3px solid border-color
+			margin-right 0px
+
+/*
+ termina el estilo de los articulos cargados por ajax
+*/
+
+/*
+  estilo del widget de los videos de youtube
+*/
+.wrapper-videos-youtube
+	margin 15px auto
+	
+	& .tab
+		cursor pointer
+		display block
+		text-decoration none
+		height 50px
+		box-sizing(border-box)
+		text-align center
+		position relative
+		& .indicator
+			left 0px
+			position absolute
+			top 11px
+			transition(all,.4s)
+			&:before
+				position absolute
+			    width 0
+			    height 0
+			    border-top: 15px solid transparent
+			    border-left: 0px solid white
+			    border-bottom: 15px solid transparent
+	& .active
+		& .indicator
+			left 0px
+			position absolute
+			top 11px
+			transition(all,.4s)
+			&:before
+				position absolute
+			    width 0
+			    height 0
+			    border-top: 15px solid transparent
+			    border-left: 20px solid white
+			    border-bottom: 15px solid transparent
+
+	& .title
+		text-align center
+		margin 0px
+		padding 0px
+		font-size 2em
+		height 50px
+		line-height 50px
+		& .flat-youtube
+			color #B11A01
+		
+	& .apple5x1-button-videos
+		background blue5x1-color
+		padding 10px 0px
+
+	& .android5x1-button-videos
+		background green5x1-color
+		padding 5px 0px
+	& .wrapper
+		position relative
+		height 300px
+		overflow hidden
+		& .side
+			color white
+			font-size 4em
+			text-align center
+			line-height 300px
+			z-index 2
+			position absolute
+			width 56px
+			height 300px
+			background rgba(0, 0, 0, .43)
+		& .left
+			top 0px
+			left 0px
+		& .right
+			top 0px
+			right 0px 
+		& .container-videos
+			height 320px
+			width 99.99%
+			box-sizing(border-box)
+			background #606060
+			line-height 300px
+			padding-left 56px
+			padding-right 79px
+			white-space nowrap
+			overflow-y hidden
+			overflow-x auto
+			& .video-item
+				cursor pointer
+				overflow hidden
+				radius(8px,8px,8px,8px)
+				margin-left 23px
+				width 223px
+				height 254px
+				background white
+				display inline-block
+				vertical-align middle
+				& .container-thumbnail
+					radius(8px,8px,0px,0px)
+					background black
+					width 100%
+					height 169px
+					overflow hidden
+					position relative
+					& img 
+						width 100%
+					& .opacity-container
+						width 100%
+						background rgba(0, 0, 0, .70)
+						radius(8px,8px,0px,0px)
+						color white
+						position absolute
+						height 169px
+						line-height 169px
+						text-align center 
+						& .flat-play-video
+							font-size 4em
+						& .date 
+							position absolute
+							bottom -70px
+							left: 6px
+				& .container-title
+					text-transform uppercase
+					width 100%
+					height 85px
+					padding 0px 10px
+					line-height 75px
+					white-space normal
+					text-align center
+					box-sizing(border-box)	
+					& span
+						color color-lyrics-dark 
+						line-height normal
+						display inline-block
+						vertical-align middle
+						font-size 1.2em
+						overflow hidden
+						max-height 65px
+
+@media screen and (max-width:500px)
+	.wrapper-videos-youtube
+		& .wrapper
+			& .side
+				display none
+				font-size 3em
+			& .container-videos
+				padding 0px
+				padding-right 23px
+/*
+  termina estilo del widget de los videos de youtube
+*/
+
+.wrapper-type-feed
+	overflow hidden
+	margin 15px auto
+	& .tabs-container
+		display flex
+		display -webkit-flex
+		background asfalto
+	& .tab
+		cursor pointer
+		color white
+		letter-spacing normal
+		font-size 1.5em
+		line-height 50px
+		display inline-block
+		width 
+		cursor pointer
+		width 20%
+		text-decoration none
+		height 50px
+		text-align center
+		position relative
+	& .active:before
+		content: ''
+		background-color: white
+		position: absolute
+		width: 10px
+		height: 5px
+		bottom: 0px
+		width: 100%
+		left: 0px
+	& .trending
+		background rojo
+	& .recomendado
+		background turquesa
+	& .util
+		background azul-peter
+	& .increible
+		background zanahoria
+	& .indignante
+		background asfalto
+	& .title-section
+		text-align center
+		margin 0px
+		padding 0px
+		font-size 2em
+		height 50px
+		line-height 50px
+		& .flat-youtube
+			color #B11A01
+	& .container-type-feed
+		background gray-ad
+		padding-top 15px
+
+@media screen and (max-width:740px)
+	.wrapper-type-feed
+		& .tab span
+			font-size 0px
+			&:before 
+				font-size 2em !important
+				
+
+/*Estilo del Login*/
+#login-form
+	overflow hidden
+	font-size 1.3em
+	& .legend
+		margin 10px 0px
+		font-family 'lato-bold'
+		font-size 1.5em
+	& .fieldset-group
+		text-align center
+		radius(5px,5px,5px,5px)
+		border 1px solid border-color
+		background white
+		& .fieldset-login
+			& .control-group
+				margin 10px
+				& .option-login
+					height 15px
+					& a
+						color color-lyrics
+						text-decoration none
+						&:hover
+							text-decoration underline
+					& .register
+						float left
+					& .forgot
+						float right
+	& .fieldset-highlight
+		radius(0px,0px,5px,5px)
+		border-top 1px solid border-color
+		margin-top 20px
+		padding 20px
+		background gris-default
+
+.wrapper-modal-login
+	max-width 600px !important
+.md-login
+	position relative
+	z-index 2000
+	padding 0px !important
+	display flex
+	& #login-sidebar
+		width 30%
+		radius(0px,0px,0px,5px)
+		background black-podcast
+		& .button-sidebar
+			border-bottom 1px solid rgba(0, 0, 0, .22)
+			shadow(1px,0px,0px,rgba(255, 255, 255, .75))
+	& #login-body
+		box-sizing(border-box)
+		padding 10px
+		width 70%
+
+@media screen and (max-width:600px)
+	.md-login
+		display block
+		& #login-sidebar
+			radius(0px,0px,0px,0px)
+			width 100%
+		& #login-body
+			width 100%
+
+/*Termina estilo del Login*/
+/*Comienza Estilo de Form de Busqueda*/
+.modal-search-wrapper
+	margin 10px
+/*Termina Estilo de Form de Busqueda*/
+
+/*estilo de reproductor flotante*/
+.floating-player
+	position fixed
+	bottom 0px
+	width 100%
+	z-index 200000
+/*termina estilo reproductor flotante*/
+
+/*estilo de pagina de categoria*/
+.description-category
+	box-sizing(border-box)
+	text-align center
+	padding 0px 5px 
+	& .title
+		text-transform uppercase
+		font-size 3em
+		margin 10px 0px
+		color color-lyrics-dark
+	& .description 
+		color color-lyrics-dark
+		font-size 1.5em
+.container-trending
+	overflow hidden
+	& .trending-title
+		background rojo
+		padding 7px
+		color white
+		font-size 1.7em
+		margin 0px
+		margin-bottom 15px
+/* termina estilo de pagina de categoria*/
+
+.article-detail-container
+	background white
+	padding-bottom 50px
+	&-image
+		position relative
+		overflow hidden
+		background #96999F
+		height 630px
+		&:before
+			content ''
+			width 100%
+			height 100%
+			background rgba(47, 52, 64, .6)
+			position absolute
+		& .container-back
+			radius(50%,50%,50%,50%)
+			font-size 20px
+			text-align center
+			line-height 40px
+			color white
+			background rgba(47, 52, 64, .8)
+			height 40px 
+			width 40px
+			position absolute 
+			top 65px
+			left 8px
+			border 1px solid transparent
+			transition(all, .3s)
+			&:hover
+				shadow(0px,0px,26px,rgba(47, 52, 64, 1))
+		& .container-image-fig
+			width 100%
+			transition(all,.5s)
+		& .container-image-inner
+			position absolute 
+			width 100%
+			height 300px
+			bottom 50%
+			margin-bottom -180px
+			& .article-title
+				font-size 3.5em
+				letter-spacing .1em
+				font-family 'lato-bold'
+				text-transform capitalize
+				color white
+				text-align center
+				margin 0px 16%
+			& .article-date
+				color white
+				font-family 'lato-regular'
+				font-size 1.5em
+				margin 20px 16%
+				text-align center
+				display flex
+				display webkit-flex
+				align-items center
+				-webkit-align-items center
+				& .splash-line
+					width 25%
+					border-bottom 1px solid white
+					height 0px
+				&-middle
+					width 50%
+			& .article-author
+				margin 20px 16%
+				text-align center
+				&-name
+					font-family 'crimson-italic', serif
+					color white 
+					display block
+					font-size 2em
+				&-avatar
+					margin 20px
+					radius(50%,50%,50%,50%)
+					width 75px
+					height 75px
+					overflow hidden
+	&-body
+		display block
+		position relative
+		& .article-share-container
+			position absolute
+			top 0px
+			left 20px
+			z-index: 1000
+			width 50px
+			& .descrip
+				display none
+			& ul
+				padding 0px
+				list-style: none
+				& li 
+					font-size 35px
+					text-align center
+					& a
+						color rgba(0, 0, 0, .40)
+					& .twitter:hover
+						color twitter
+					& .facebook:hover
+						color facebook
+					& .gplus:hover
+						color gplus
+		& .article-text-container
+			margin 0px 16%
+			max-width 1200
+			font-size 1.7em
+			line-height 1.9
+			& p
+				margin 0px 0px 2em 0px
+				font-family 'crimson-regular', serif
+				font-weight normal
+				color color-lyrics-dark
+			& i, em
+				font-family 'crimson-italic', serif	
+			& strong
+				font-family 'crimson-bold', serif
+			& a 
+				text-decoration underline
+				color blue5x1-color
+			& blockquote
+				color color-lyrics-dark
+				margin 0px
+				padding 0px
+				margin 0px 0px 2em 5%
+				padding-left 10px
+				border-left 4px solid border-color
+				font-family 'crimson-italic'
+				font-style italic
+			& img
+				max-width 100%
+			& .image-left
+				float left
+				margin-right 10px
+			& .image-right
+				float right
+				margin-left 10px
+			& .image-full
+				float left
+				margin 10px 0px !important
+				width 100% !important
+		& .tagged-as
+			text-align center
+			margin 0px 16%
+			max-width 1200
+			& .resume
+				color color-lyrics-dark
+				text-align center
+				font-size 2em
+			& ul 
+				font-size 1.2em
+				list-style: none
+				padding 0px
+				& li
+					display inline-block
+					margin 15px 5px
+					a 	
+						color color-lyrics
+						padding 7px 10px
+						border 1px solid color-lyrics
+						radius(5px, 5px, 5px, 5px)
+						&:hover
+							color blue5x1-color
+							border 1px solid blue5x1-color
+							
+		& .opinion
+			padding 40px 0px
+			text-align center
+			margin 10px 16%
+			& .resume
+				color color-lyrics-dark
+				font-size 2em
+			& .container-opinion-button
+				& .recomendado
+					COLOR turquesa
+					&:hover
+						background turquesa
+						color white
+				& .util
+					COLOR azul-peter
+					&:hover
+						background azul-peter
+						color white
+				& .increible
+					COLOR zanahoria
+					&:hover
+						background zanahoria
+						color white
+				& .indignante
+					COLOR asfalto
+					&:hover
+						background asfalto
+						color white
+				& .opinion-button
+					display: inline-block
+					text-align center
+					margin 4px
+					padding 5px
+					radius(5px,5px,5px,5px)
+					width auto 
+					& .icon
+						font-size 2.6em
+						margin 0px auto
+						display block
+						line-height 40px
+						width 40px 
+						height 40px
+					& .name 
+						font-size 1.5em
+.info-author
+	text-align center
+	padding 10px 
+	box-sizing(border-box)
+	background gris-default
+	margin 10px 16%
+	radius(5px,5px,5px,5px)
+	border 1px solid border-color
+	&-image
+		display inline-block
+		height 80px 
+		width 80px
+		radius(50%,50%,50%,50%)
+	&-description
+		padding-left 10px
+		display inline-block
+		& .author-name
+			font-family 'lato-bold'
+			font-size 1.7em
+		& .author-resume
+			font-size 1.2em
+
+.newsletter
+	padding 40px 0px
+	text-align center
+	background gris-default
+	border-top 1px solid border-color
+	border-bottom 1px solid border-color
+	&-title
+		color color-lyrics-dark
+		margin 0px
+		margin-bottom 15px
+		font-size 2em
+	&-form 
+		display inline-block
+		width 400px
+		max-width 90%
+		position relative
+		font-size 1.4em
+		height 40px
+		border 1px solid border-color
+		overflow hidden
+		radius(5px,5px,5px,5px)
+		&:hover
+			border 1px solid blue5x1-color
+		&-input
+			padding-left 10px
+			padding-right 110px
+			height 100%
+			border 0px
+			background white
+			display inline-block
+			width 100%
+			box-sizing(border-box)
+			&:focus
+				outline none
+		&-button
+			height 100%
+			color white
+			width 100px
+			position absolute
+			top 0px
+			right 0px
+			margin 0px
+			border 0px
+			radius(0px,0px,0px,0px)
+			background blue5x1-color
+			display inline-block
+			
+.related-articles
+	width 100%
+	&-title
+		color color-lyrics-dark
+		margin 0px
+		margin 15px 0px
+		font-size 2em
+		
+				
+						
+@media screen and (max-width:960px)
+	.article-detail-container
+		&-image
+			& .container-image-fig
+				width auto
+				height 100%
+@media screen and (max-width:800px)
+	.article-detail-container
+		&-image
+			& .container-image-fig
+				margin-left -75.5px
+@media screen and (max-width:700px)
+	.article-detail-container
+		&-image
+			& .container-image-fig
+				margin-left -122.5px
+			& .container-image-inner
+				& .article-title
+					font-size 3em
+					margin 0px 15px
+				& .article-date
+					font-size 1.4em
+					margin 20px 15px
+				& .article-author
+					margin 20px 15px
+					&-name 
+						color white 
+						display block
+						font-size 1.8em
+@media screen and (max-width:600px)
+	.article-detail-container
+		&-image
+			height 500px
+			& .container-image-fig
+				margin-left -75px
+		&-body
+			& .tagged-as
+				margin 0px 20px
+				& .resume
+					font-size 1.5em
+			& .opinion
+				margin 0px 20px
+
+			& .article-text-container
+				font-size 2em
+				line-height 1.8
+				margin 0px 20px
+				& p
+					margin 0px 0px 1.7em 0px
+				& img
+					max-width 100%
+					height auto !important
+					margin 10px 0px
+			& .article-share-container
+				position relative
+				top 0px
+				left 0px
+				z-index: 1000
+				width 100%
+				text-align center
+				& .descrip
+					display block
+					font-size 1.3em
+					font-family 'lato-regular'
+					color color-lyrics-dark
+				& ul
+					padding 0px
+					list-style: none
+					& li:last-child
+						margin-right 0px
+					& li 
+						display inline-block
+						margin-right 10px
+						font-size 35px
+						text-align center
+						& a
+							color border-color
+	& .info-author
+		text-align center
+		margin 0px 20px							
+@media screen and (max-width:500px)
+	.article-detail-container
+		&-image
+			& .container-image-fig
+				margin-left -125px
+@media screen and (max-width:400px)
+	.article-detail-container
+		&-image
+			& .container-image-fig
+				margin-left -175px
+@media screen and (max-width:300px)
+	.article-detail-container
+		&-image
+			& .container-image-fig
+				margin-left -225px
