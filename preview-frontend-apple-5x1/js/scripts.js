@@ -25,11 +25,17 @@ jQuery(document).ready(function($) {
 		})
 	/*Termina Configuracion del boton responsivo de la web */
 	/*Configuracion botones sociales de articulos */
+	var ix = 0;
 	$( window ).scroll(function() {
 		var scrollTop = document.body.scrollTop 
 		try{
 			if (window.matchMedia('(min-width:600px)').matches) {
 				var floatingShare = document.getElementById('article-share-container')
+				var imageMain = $('.container-image-fig');
+				ix = ix + 1;
+		  		imageMain.css({
+		  			marginTop: (scrollTop)+'px'
+		  		});
 			  	if (scrollTop>=680) {
 			  		floatingShare.style.position = "fixed"
 			  		floatingShare.style.top = "66px"
