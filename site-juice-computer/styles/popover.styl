@@ -1,0 +1,54 @@
+.ns-popover-tooltip-theme
+  box-sizing: border-box
+  z-index: 100
+  max-width 340px
+
+.ns-popover-tooltip-theme .ns-popover-tooltip
+  box-sizing: border-box
+  border-radius: 3px
+  z-index: 100
+  background-color: rgba(255, 255, 255, 1)
+  padding: 0.5625rem 0.875rem
+  max-width: 20rem
+  font-size: 0.875rem
+  margin: 10px
+  color #444
+
+.ns-popover-tooltip:after
+  content ''
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  position: absolute
+  bottom 1px
+  left 50%
+  margin-left -10px
+
+.ns-popover-tooltip-theme .ns-popover-tooltip ul
+  padding: 0
+  margin: 0.625rem 0
+  display: block
+
+.ns-popover-tooltip-theme .ns-popover-tooltip li
+  list-style-type: none
+
+.ns-popover-tooltip-theme .ns-popover-tooltip li a
+  padding: 0.1875rem 0.625rem
+  display: block
+
+.ns-popover-tooltip-theme .ns-popover-tooltip li a:hover
+  background-color: #f5f5f5
+  
+.ns-popover-tooltip-theme.ns-popover-left-align .ns-popover-tooltip
+  margin-left: 0
+
+.ns-popover-tooltip-theme.ns-popover-right-align .ns-popover-tooltip
+  margin-right: 0
+
+.ns-popover-tooltip-theme.ns-popover-top-align .ns-popover-tooltip
+  margin-top: 0
+
+.ns-popover-tooltip-theme.ns-popover-bottom-align .ns-popover-tooltip
+  margin-bottom: 0
