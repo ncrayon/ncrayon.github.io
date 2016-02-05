@@ -6,4 +6,28 @@
        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');</script> <script src="scripts/vendor.0f4c0850.js"></script> <script src="scripts/scripts.b5a90d70.js"></script> </body> </html>
+       ga('send', 'pageview');</script> <script src="scripts/vendor.0f4c0850.js"></script> <script src="scripts/scripts.b5a90d70.js"></script><script>
+       	$(document).ready(function($) {
+    $( document ).on( 'click', '.modal-close', function () {
+      $(".modal").hide();
+    });
+
+    $( document ).on( 'click', '.menu-item', function () {
+      var modal = $(this).attr('data-ref')
+      $(modal).show();
+    });
+
+    var m = 0;
+    $( document ).on( 'click', '.btn-show-menu', function () {
+      m+=1;
+      if (m%2==1) {
+        $('.sidebar').show();
+        $(this).addClass('menu-x')
+      }else{
+        $('.sidebar').hide();
+        $(this).removeClass('menu-x')
+      }
+      
+    });
+});
+       </script> </body> </html>
