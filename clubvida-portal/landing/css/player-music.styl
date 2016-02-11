@@ -1,0 +1,95 @@
+colorVida = #C84A2B
+
+#player
+  width: 100%
+  height: 60px
+  padding 10px 10px 0px 10px
+  position: fixed
+  bottom: 0px
+  left: 0px
+  z-index: 40000
+  background: rgb(255, 255, 255)
+  box-sizing: border-box
+  -moz-box-sizing: border-box
+
+#player .cover
+  width: 60px
+  position: absolute
+  top: 0
+  left: 0
+  border-radius: 50%
+
+#player .trackinfo
+  display: inline-block
+  vertical-align: middle
+  color: #646464
+
+#player .trackinfo p
+  text-shadow: 0px 0px 5px #333
+
+#player .trackinfo #artist
+  padding-left: 5px
+
+#player .trackinfo #title
+  font-weight: bold
+  font-size: 20px
+  margin-bottom: 5px
+
+#player .container
+  overflow: hidden
+  display: inline-block
+  vertical-align: middle
+
+.nav
+  width: 40px
+  height: 40px
+  background-color: transparent
+  border: 2px solid colorVida
+  border-radius: 50%
+  outline: none
+  text-align center
+  cursor: pointer
+  color colorVida
+  &:hover
+    background-color: colorVida
+    color white
+
+.ward
+  width: 40px
+  height: 40px
+  background-color: transparent
+  outline: none
+  text-align center
+  cursor: pointer
+  color colorVida
+  border 0px
+
+#track
+  width: 100%
+  height: 5px
+  position: absolute
+  background-color: rgb(155, 155, 155)
+  top: -3px
+  left: 0px
+  z-index: 10
+  cursor: pointer
+
+#track #handler
+  position: absolute
+  width: 20px
+  height: 20px
+  background-color: colorVida
+  top: 50%
+  left: 0%
+  margin-top: -10px
+  border-radius: 50%
+  cursor: pointer
+  z-index: 5
+
+#track #progress
+  position: absolute
+  height: 5px
+  width: 0%
+  background: colorVida
+  cursor: pointer
+

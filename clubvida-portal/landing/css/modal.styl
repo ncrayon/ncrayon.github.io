@@ -1,0 +1,119 @@
+.modal-open
+  overflow: hidden
+.modal
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: rgba(0, 0, 0, .75)
+  z-index: 4040
+  display: block
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+  outline: 0
+.md-wrapper-modal
+  width 100% !important
+  margin 0px auto !important
+  radius(0px,0px,0px,0px !important)
+.wrapper-modal
+  background: #f5f5f7
+  width 70%
+  height auto
+  margin 4% auto
+  min-width 287px
+  radius(6px,6px,6px,6px)
+  & .md-head
+    letter-spacing normal
+    line-height 60px
+    box-sizing(border-box)
+    padding 0px 20px
+    radius(6px,6px,0px,0px)
+    height 60px
+    font-size 1.2em
+    background #ededee
+    width 100%
+    white-space nowrap
+    position relative
+    border-bottom 1px solid #d3d3d4
+    shadow(0px,3px,3px, rgba(255, 255, 255, .4))
+    & .close-modal
+      cursor pointer
+      shadow(inset 0px,1px,0px,rgba(0, 0, 0, .2))
+      position absolute
+      top 15px
+      right 20px
+      height 30px
+      line-height 30px
+      text-align center
+      width 30px
+      background #c9c9cd
+      radius(50%,50%,50%,50%)
+      color white
+      text-shadow 0px 1px 0px rgba(0, 0, 0, .2)
+      font-size 18px
+        
+        
+  & .md-body
+    padding 0px 20px 20px 20px
+  & .md-foot
+    border-top 1px solid grisBorde
+    text-align center
+    padding 20px
+
+.modal-search
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: rgba(255, 255, 255, .95)
+  z-index: 4040
+  display: block
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+  outline: 0
+  &-top
+    height 56px
+    width 100%
+    background white
+    border-bottom 1px solid border-color
+    line-height 56px
+    position relative
+    box-sizing(border-box)
+    padding 2px
+    & .flat-search
+      color color-lyrics
+      position absolute
+      font-size 30px
+      top -3px
+      margin-left 10px
+    & .input-search
+      color color-lyrics
+      font-family 'lato-light'
+      padding 0px 40px 7px 50px
+      box-sizing(border-box)
+      font-size 3em
+      background transparent
+      display inline-block
+      vertical-align middle
+      width 100%
+      border 0px
+      &:focus 
+        outline 0px
+    & .flat-x
+      cursor pointer
+      color color-lyrics
+      position absolute
+      font-size 20px
+      top 0px
+      right 0px
+      padding-right 10px
+      padding-left 10px
+  &-wrapper
+    color color-lyrics
+    margin 20px
+    & .msg
+      font-size 2em
+      font-family lato-light
+      

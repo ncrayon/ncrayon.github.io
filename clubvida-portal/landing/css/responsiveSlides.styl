@@ -1,0 +1,64 @@
+.wrapper-slides
+  position relative
+  z-index 0
+  & a.rslides_nav
+    position absolute
+    top: 50%;
+    margin-top -7px
+    z-index 200
+    transition .2s all timing-function
+    -webkit-transition .2s all timing-function
+  & a.prev
+    left 11px
+    width: 0 
+    height: 0 
+    border-top: 15px solid transparent
+    border-bottom: 15px solid transparent 
+    border-right: 15px solid rgba(255, 255, 255, .75)
+    &:hover
+      margin-top -12px !important
+      border-top: 25px solid transparent
+      border-bottom: 25px solid transparent 
+      border-right: 25px solid white
+  & a.next
+    right 11px
+    width: 0 
+    height: 0 
+    border-top: 15px solid transparent
+    border-bottom: 15px solid transparent 
+    border-left: 15px solid rgba(255, 255, 255, .75)
+    &:hover
+      margin-top -12px !important
+      border-top: 25px solid transparent
+      border-bottom: 25px solid transparent 
+      border-left: 25px solid white
+.rslides
+  position: relative
+  list-style: none
+  overflow: hidden
+  width: 100%
+  padding: 0
+  margin: 0
+  box-sizing border-box
+  -moz-box-sizing border-box
+
+.rslides li
+  -webkit-backface-visibility: hidden
+  position: absolute
+  display: none
+  width: 100%
+  left: 0
+  top: 0
+
+.rslides li:first-child
+  position: relative
+  display: block
+  float: left
+
+.rslides img
+  display: block
+  height: auto
+  float: left
+  width: 100%
+  border: 0
+
