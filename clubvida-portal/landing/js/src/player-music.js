@@ -85,7 +85,7 @@ function nextTrack() {
       updateInfo();
     }
 }
-//nextTrack()
+nextTrack()
 function prevTrack() {
     current_track--;
     current_track = (current_track == -1 ? (songs.length - 1) : current_track);
