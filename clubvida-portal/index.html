@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>Club Vida</title>
 	<link rel="stylesheet" href="landing/css/main.css">
 	<link href='https://fonts.googleapis.com/css?family=Asap:400,400italic,700' rel='stylesheet' type='text/css'>
@@ -178,7 +179,7 @@
                     <i class="fa fa-backward"></i>
                 </button>
                 <button id="play" class="nav">
-                    <i class="fa fa-play"></i>
+                    <i class="fa fa-play pad"></i>
                 </button>
                 <button id="next" class="ward">
                     <i class="fa fa-forward"></i>
@@ -188,6 +189,12 @@
 	    <div class="trackinfo">
 	        <span id="title"></span>
 	        <span id="artist"></span>
+	    </div>
+	    <div class="control-volume">
+	    	<div class="wrapper-fader">
+	    		<input type="range" min="0" max="100" value="100" id="fader" step="1" oninput="outputUpdate(value)">
+	    	</div>	    
+		    <i class="fa fa-volume-up"></i>
 	    </div>
 	    <div id="track">
 	        <div id="progress"></div>
@@ -199,7 +206,7 @@
 	<script src="landing/js/vendor/jquery.fullpage.min.js"></script>
 	<script type="text/javascript" src="landing/js/vendor/react/react.min.js"></script>
 	<script type="text/javascript" src="landing/js/vendor/moment.min.js"></script>
-	<script type="text/javascript" src="landing/js/src/get-youtube-react.js"></script>
+	<script type="text/javascript" src="landing/js/src/get-vimeo-react.js"></script>
 	<script src="landing/js/src/player-music.js"></script>	
 	<script src="landing/js/src/main.js"></script>	
 </body>

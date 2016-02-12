@@ -85,7 +85,7 @@ function nextTrack() {
       updateInfo();
     }
 }
-nextTrack()
+//nextTrack()
 function prevTrack() {
     current_track--;
     current_track = (current_track == -1 ? (songs.length - 1) : current_track);
@@ -100,4 +100,8 @@ function updateInfo() {
     title.textContent = song.title;
     artist.textContent = song.artist;
     audio.play();
+}
+
+function outputUpdate(vol) {
+    audio.volume = vol/100;
 }

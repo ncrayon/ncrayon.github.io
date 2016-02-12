@@ -44,6 +44,9 @@ footer
 	padding 20px 0px 80px 0px 
 	box-sizing(border-box)
 
+button:focus
+	outline none
+
 .wrapper
 	margin 0px auto
 	max-width 1200px
@@ -123,7 +126,7 @@ footer
 		float left
 		width 236px
 		height 36px
-		background url('../images/logo.png')
+		background url('../images/logo-black.png')
 		background-size 100% 100%
 	& .btn-menu
 		transition(all,.3s)
@@ -479,6 +482,8 @@ footer
     }
 }
 
+
+
 /*********************************************************
 ****************** estilo responsive *********************/
 
@@ -486,10 +491,9 @@ footer
 	.bar-black
 		& .menu
 			display none
-			float right
-			position relative
+			position absolute
 			top 60px
-			right -15px
+			right 15px
 			height auto !important
 			background white
 			padding 0px 7px
@@ -589,4 +593,4 @@ footer
 @media screen and (max-width:389px)
 	.bar-black
 		& .menu
-			top 0px !important
+			top 59px !important

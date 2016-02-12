@@ -21,7 +21,8 @@ var ModalYoutube = React.createClass({displayName: "ModalYoutube",
 		}
 		var videoId = this.props.videoId
 		if (videoId) {
-			var srcVideo = "http://www.youtube.com/embed/" + videoId + "?autoplay=1"
+			var videoId = videoId.replace("/videos/", "");
+			var srcVideo = "https://player.vimeo.com/video/" + videoId + "?autoplay=1"
 		}else{
 			var srcVideo = '';
 		}
@@ -48,16 +49,16 @@ var YoutubeVideos = React.createClass({displayName: "YoutubeVideos",
   	var showModal = this.props.fnClick
     var createItem = function(itemText, index) {
       return (
-		React.createElement("article", {className: "video-item", key: index + itemText, onClick: showModal.bind(this,itemText.snippet.resourceId.videoId)}, 
+		React.createElement("article", {className: "video-item", key: index + itemText, onClick: showModal.bind(this,itemText.uri)}, 
 			React.createElement("div", {className: "container-thumbnail"}, 
 				React.createElement("div", {className: "opacity-container"}, 
-					React.createElement("span", {className: "date"}, moment(itemText.snippet.publishedAt).fromNow()), 
+					React.createElement("span", {className: "date"}, moment(itemText.created_time).fromNow()), 
 					React.createElement("i", {className: "fa fa-play-circle"})
 				), 
-				React.createElement("img", {src: itemText.snippet.thumbnails.high.url, alt: ""})
+				React.createElement("img", {src: itemText.pictures.sizes[2].link, alt: ""})
 			), 
 			React.createElement("div", {className: "container-title"}, 
-				React.createElement("span", null, itemText.snippet.title)
+				React.createElement("span", null, itemText.name)
 			)
 		)
       )
@@ -78,11 +79,11 @@ var ContainerYoutubeVideos = React.createClass({displayName: "ContainerYoutubeVi
 	},
 	componentDidMount: function() {
 		$.get(this.props.source, function(response) {
-			var ListVideosV3 = response.items;
+			var ListVideosV3 = response.data;
 			var ListVideos = []
 			if (this.isMounted()) {
 				for(var i in ListVideosV3){
-					var title = ListVideosV3[i].snippet.title;
+					var title = ListVideosV3[i].name;
 					if (title != 'Private video') {
 						ListVideos.push(ListVideosV3[i])
 					};
@@ -151,7 +152,7 @@ var ContainerYoutubeVideos = React.createClass({displayName: "ContainerYoutubeVi
 
 try{
 	React.render(
-		React.createElement(ContainerYoutubeVideos, {source: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=PLbP-mv2jnh7VXTwYU0g6jKdZYmtjRhxp5&key=AIzaSyDaYys_1T19BUxhCfZUUQl7Lgn0W4AYfl0&order=date"}),
+		React.createElement(ContainerYoutubeVideos, {source: "https://api.vimeo.com/groups/355538/videos?access_token=4697209fca1933a1638b59db07b8dd84"}),
 		document.getElementById('wrapper-videos-youtube')
 	)
 }catch(err){}

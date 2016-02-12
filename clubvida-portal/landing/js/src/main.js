@@ -29,36 +29,13 @@ $(document).ready(function($) {
 
     $(window).scroll(function(){
     	var topBar = $('#topBar');
+    	var playerBar = $('#player');
     	if ($(this).scrollTop() >= 400) {
 			topBar.addClass('bar-white');
+			playerBar.addClass('player-mini');
     	}else{
     		topBar.removeClass('bar-white');
+    		playerBar.removeClass('player-mini');
     	}  
-    })    
-
-    $('#fullPage').fullpage({
-    	verticalCentered: true,
-    	autoScrolling: false,
-    	anchors:['inicio', 'servicios','cursos','contacto'],
-    	responsive: 400,
-    	fitToSection: true,
-    	resize : true,
-		afterLoad: function(anchorLink, index){
-			//var maxwidth = window.matchMedia('(max-width:1000px)').matches;
-			var topBar = $('#topBar');
-			var iphoneEl = $('#iphone');
-
-			if (anchorLink == 'inicio') {
-				topBar.removeClass('bar-white');
-			}else if (anchorLink == 'servicios') {
-				topBar.addClass('bar-white');
-				iphoneEl.removeClass('animate-iphone')
-			}else if (anchorLink == 'cursos') {
-				topBar.addClass('bar-white');
-				iphoneEl.addClass('animate-iphone')		
-			}else if (anchorLink == 'contacto') {
-				topBar.addClass('bar-white');
-			}
-		}
-    });
+    })  
 });

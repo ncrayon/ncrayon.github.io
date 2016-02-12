@@ -1,0 +1,23 @@
+{
+	"items": [
+		{
+			"kind": "youtube#playlistItem",
+			"etag": "",
+			"id": "PLcSfSG4BBAHx9dfsXowqFKbIPapQY16ZW39GShvKNexo",
+			"snippet": {
+			"publishedAt": "2014-01-02T20:04:59.000Z",
+				"channelId": "UCEJDadjet9eMABR0JV0zYqw",
+				"title": "Jesús Adrián Romero - Soplando Vida DVD - Música Cristiana",
+				"description": "",
+				"thumbnails": {},
+				"channelTitle": "Música Cristiana TV",
+				"playlistId": "PLbP-mv2jnh7VXTwYU0g6jKdZYmtjRhxp5",
+				"position": 0,
+				"resourceId": {
+						"kind": "youtube#video",
+						"videoId": "q2-49LEERlc"
+					}
+			}
+		},
+	]
+}
