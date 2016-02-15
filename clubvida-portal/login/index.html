@@ -13,7 +13,7 @@
 	    <div class="panel">
 	    	<img width="300" src="../landing/images/login-titulo.png" alt="">
 		    <div class="box-login radius-2x">
-		    	<form method="GET" action="/clubvida-portal/premium/#/" >
+		    	<form method="GET" action="/clubvida-portal/premium" >
 			        <div class="rows box-login-content">
 			            
 			               {% csrf_token %} 
@@ -30,7 +30,7 @@
 			        </div>
 			        <div class="rows box-login-bottom">
 			            <div class="columns grid-12">
-			                <button class="margin-t-10 columns grid-12 btn-outline btn-fb login center radius-2x" onclick="fbLogin();" type="submit"><i class="fa fa-sign-in"></i>  Entrar</button>
+			                <a href="/clubvida-portal/premium" class="margin-t-10 columns grid-12 btn-outline login center radius-2x" onclick="fbLogin();" type="submit"><i class="fa fa-sign-in"></i>  Entrar</a>
 			            </div>
 			        </div>  
 		        </form>                                  
