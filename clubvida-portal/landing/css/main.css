@@ -2049,9 +2049,12 @@ a {
 }
 
 .btn-outline.login{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   background: #eee;
   border: 1px solid #ddd;
   display: block;
-  color: #ddd;
+  color: #8b8b8b;
   padding: 5px 8px;
 }
