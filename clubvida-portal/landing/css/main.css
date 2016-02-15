@@ -2047,3 +2047,11 @@ a {
     bottom: 0px;
   }
 }
+
+.btn-outline.login{
+  background: #eee;
+  border: 1px solid #ddd;
+  display: block;
+  color: #ddd;
+  padding: 5px 8px;
+}
