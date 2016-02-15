@@ -1,0 +1,84 @@
+html,
+body.bg 
+	background  url('../images/fondovida.png')
+	background-size cover 
+	background-position top center
+	height 100%
+	width 100%
+.wrapper-login
+	height 100%
+	width 100%
+	text-align center
+	& .balance-login
+		height 100%
+		display inline-block
+		vertical-align middle
+	& .panel
+		display inline-block
+		vertical-align middle		
+		& .box-login
+			background rgba(255, 255, 255, .75)
+			width 100%
+			max-width 300px
+			box-sizing border-box
+			-moz-box-sizing border-box
+			text-align left
+			radius(5px,5px,5px,5px)
+			overflow hidden
+			& .box-login-content
+				box-sizing border-box
+				-moz-box-sizing border-box
+				padding 12px			
+			& .box-login-bottom
+				border-top 1px solid rgba(200, 200, 200, .75)
+				box-sizing border-box
+				-moz-box-sizing border-box
+				padding 12px
+				background: rgba(247, 247, 247,0.5)
+
+.wrapper-field
+	margin: 10px 0px 0px 0px
+	position: relative
+
+.wrapper-field label
+	position: relative
+	letter-spacing: normal
+	font-size: 1em
+	color: #5a5a5a
+	display: block
+	margin-bottom: 3px !important
+
+.wrapper-field input[type=text],
+.wrapper-field input[type=password],
+.wrapper-field .custom-select,
+.wrapper-field textarea,
+.field
+	background: #f8f9fa
+	border: 1px solid #d9e0e2
+	box-sizing: border-box
+	-moz-box-sizing: border-box
+	padding: 8px 10px
+	display: inline-block
+	color: #515151
+	letter-spacing: normal
+
+.wrapper-field.grid-12 input,
+.wrapper-field.grid-12 .custom-select,
+.wrapper-field.grid-12 textarea
+	width: 100%
+
+.wrapper-field input[type=text]:focus
+	border: 1px solid #3498db
+	outline: none
+	
+.bottom 
+	position absolute
+	bottom 0px
+	font-size 14px
+	text-align center
+	color rgba(255, 255, 255, .60)
+	padding 20px 0px 4px 0px 
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%) 
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%) 
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%) 
+	filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 )"

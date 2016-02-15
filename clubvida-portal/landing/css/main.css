@@ -1004,7 +1004,7 @@ html.fp-enabled,
     -ms-border-radius: 0px 0px 6px 6px;
     -o-border-radius: 0px 0px 6px 6px;
     border-radius: 0px 0px 6px 6px;
-    right: 10px !important;
+    right: 80px !important;
     bottom: 10px !important;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
@@ -1190,6 +1190,105 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -6px;
 }
+html,
+body.bg {
+  background: url("../images/fondovida.png");
+  background-size: cover;
+  background-position: top center;
+  height: 100%;
+  width: 100%;
+}
+.wrapper-login {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.wrapper-login .balance-login {
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.wrapper-login .panel {
+  display: inline-block;
+  vertical-align: middle;
+}
+.wrapper-login .panel .box-login {
+  background: rgba(255,255,255,0.75);
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-align: left;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -ms-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  overflow: hidden;
+}
+.wrapper-login .panel .box-login .box-login-content {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 12px;
+}
+.wrapper-login .panel .box-login .box-login-bottom {
+  border-top: 1px solid rgba(200,200,200,0.75);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 12px;
+  background: rgba(247,247,247,0.5);
+}
+.wrapper-field {
+  margin: 10px 0px 0px 0px;
+  position: relative;
+}
+.wrapper-field label {
+  position: relative;
+  letter-spacing: normal;
+  font-size: 1em;
+  color: #5a5a5a;
+  display: block;
+  margin-bottom: 3px !important;
+}
+.wrapper-field input[type=text],
+.wrapper-field input[type=password],
+.wrapper-field .custom-select,
+.wrapper-field textarea,
+.field {
+  background: #f8f9fa;
+  border: 1px solid #d9e0e2;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 8px 10px;
+  display: inline-block;
+  color: #515151;
+  letter-spacing: normal;
+}
+.wrapper-field.grid-12 input,
+.wrapper-field.grid-12 .custom-select,
+.wrapper-field.grid-12 textarea {
+  width: 100%;
+}
+.wrapper-field input[type=text]:focus {
+  border: 1px solid #3498db;
+  outline: none;
+}
+.bottom {
+  position: absolute;
+  bottom: 0px;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  padding: 20px 0px 4px 0px;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 )";
+}
 /* variables */
 /* estilo general */
 body {
@@ -1226,6 +1325,10 @@ footer {
 }
 button:focus {
   outline: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
 }
 .wrapper {
   margin: 0px auto;

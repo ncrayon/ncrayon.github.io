@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Club Vida</title>
+	<link rel="stylesheet" href="../landing/css/main.css">
+	<link href='https://fonts.googleapis.com/css?family=Asap:400,400italic,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body class="bg">
+	<div class="wrapper-login">
+	    <div class="balance-login"></div>
+	    <div class="panel">
+	    	<img width="300" src="../landing/images/login-titulo.png" alt="">
+		    <div class="box-login radius-2x">
+		    	<form method="POST" action="/premium" >
+			        <div class="rows box-login-content">
+			            
+			               {% csrf_token %} 
+			                <div class="columns grid-12">
+			                    <div class="wrapper-field grid-12">
+			                        <input type="text" name="username" placeholder="Nro. Celular" id="id_username" class="validate radius-2x">
+			                    </div>
+			                </div>            
+			                <div class="columns grid-12">
+			                    <div class="wrapper-field grid-12">
+			                        <input type="password" name="password" placeholder="PIN" id="id_password" class="validate radius-2x">
+			                    </div>
+			                </div> 
+			        </div>
+			        <div class="rows box-login-bottom">
+			            <div class="columns grid-12">
+			                <button class="margin-t-10 columns grid-12 btn-outline btn-fb login center radius-2x" onclick="fbLogin();" type="submit"><i class="fa fa-sign-in"></i>  Entrar</button>
+			            </div>
+			        </div>  
+		        </form>                                  
+		    </div>	    	
+	    </div>
+	    <div class="balance-login"></div>
+	</div>	
+	<div class="bottom">
+		<span>Servicio exclusivo para usuarios xxxx Costo xxxx por mensaje enviado al codigo xxxx para cancelar enviá SALIR xxxx al xxxx. La mecánica y los derechos de autor del son propiedad exclusiva de xxxxx. Consultar términos y condiciones. Comentarios al correo:xxxx</span>
+	</div>
+</body>
+</html>
