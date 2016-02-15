@@ -1,0 +1,12 @@
+TEXT_GAMEOVER  = "PERDISTE";
+TEXT_CONGRATS  = "FELICIDADES";
+TEXT_MONEY     = "INTENTOS";
+TEXT_PLAY      = "JUGAR";
+TEXT_BET       = "           INTENTOS ";
+TEXT_COIN      = " JUGAYGANA";
+TEXT_MAX_BET   = "                                   .";
+TEXT_INFO      = ".";
+TEXT_LINES     = "LINEAS";
+TEXT_SPIN      = "JUGAR";
+TEXT_WIN       = ".";
+TEXT_HELP_WILD = "TABLA DE PUNTOS \nVERIFICA TU PUNTAJE \VERIFICA TUS MONEDAS";
