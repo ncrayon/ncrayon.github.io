@@ -1197,6 +1197,7 @@ body.bg {
   background-position: top center;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 .wrapper-login {
   height: 100%;
@@ -1241,6 +1242,24 @@ body.bg {
   padding: 12px;
   background: rgba(247,247,247,0.5);
 }
+.back {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  padding: 3px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -ms-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+.back:hover {
+  background: rgba(255,255,255,0.75);
+  padding: 3px 5px;
+  color: #8166b6;
+}
 .wrapper-field {
   margin: 10px 0px 0px 0px;
   position: relative;
@@ -1278,7 +1297,8 @@ body.bg {
   outline: none;
 }
 .bottom {
-  position: absolute;
+  position: fixed;
+  width: 100%;
   bottom: 0px;
   font-size: 14px;
   text-align: center;
@@ -1288,6 +1308,21 @@ body.bg {
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
   filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 )";
+}
+.btn-outline.login {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background: #eee;
+  border: 1px solid #ddd;
+  display: block;
+  color: #565656;
+  padding: 5px 8px;
+}
+.btn-outline.login:hover {
+  border: 1px solid #f60;
+  color: #f60;
 }
 /* variables */
 /* estilo general */
@@ -1329,6 +1364,9 @@ button:focus {
 a {
   text-decoration: none;
   color: #fff;
+}
+.link:hover {
+  text-decoration: underline;
 }
 .wrapper {
   margin: 0px auto;
@@ -2046,15 +2084,4 @@ a {
   100% {
     bottom: 0px;
   }
-}
-
-.btn-outline.login{
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  background: #eee;
-  border: 1px solid #ddd;
-  display: block;
-  color: #8b8b8b;
-  padding: 5px 8px;
 }

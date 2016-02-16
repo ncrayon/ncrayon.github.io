@@ -8,12 +8,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="bg">
+	<a href="/#atras" onclick="history.go(-1);"  class="back"><i class="fa fa-arrow-left"></i> Atrás</a>
 	<div class="wrapper-login">
 	    <div class="balance-login"></div>
 	    <div class="panel">
 	    	<img width="300" src="../landing/images/login-titulo.png" alt="">
 		    <div class="box-login radius-2x">
-		    	<form method="GET" action="/clubvida-portal/premium" >
+		    	<form method="POST" action="/premium" >
 			        <div class="rows box-login-content">
 			            
 			               {% csrf_token %} 
@@ -30,10 +31,14 @@
 			        </div>
 			        <div class="rows box-login-bottom">
 			            <div class="columns grid-12">
-			                <a href="/clubvida-portal/premium" class="margin-t-10 columns grid-12 btn-outline login center radius-2x" onclick="fbLogin();" type="submit"><i class="fa fa-sign-in"></i>  Entrar</a>
+			                <a class="margin-t-10 columns grid-12 btn-outline btn-fb login center radius-2x" href="/clubvida-portal/premium"><i class="fa fa-sign-in"></i>  Entrar</a>
 			            </div>
 			        </div>  
 		        </form>                                  
+		    </div>
+		    <div>
+		    	<br>
+		    	<a href="#lostPIN" class="link">Olvidaste tu PIN</a>
 		    </div>	    	
 	    </div>
 	    <div class="balance-login"></div>
